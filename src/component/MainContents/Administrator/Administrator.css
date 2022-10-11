@@ -66,3 +66,11 @@
   .dropdown{
     cursor: pointer;
   }
+
+
+  .accessRecord {
+    height: max-content;
+    margin: 10px;
+    padding-left: 20px;
+    padding-top: 5px;
+}

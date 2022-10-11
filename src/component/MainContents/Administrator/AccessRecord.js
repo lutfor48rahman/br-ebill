@@ -5,15 +5,17 @@ const AccessRecord = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const [search, setSearch] = useState('');
     const [countries, setCountries] = useState([]);
-    const [filter, setFilter] = useState('');
-    console.log(filter)
+    const [filter, setFilter] = useState([]);
+    const [value, setValue] = useState('');
+    // console.log(filter);
+    console.log(search);
 
     useEffect(() => {
         fetch('https://restcountries.com/v3.1/all')
             .then(res => res.json())
             .then(data => {
-                setCountries(data)
-                setFilter(data)
+                setCountries(data);
+                setFilter(data);
             })
     }, []);
 
@@ -27,7 +29,10 @@ const AccessRecord = () => {
     console.log(search);
     const onSubmit = data => {
         const value = data.name;
-        console.log(value);
+        const value1 = data.value;
+        // setValue(value1);
+        // console.log(value);
+        // console.log(value1);
     }
     return (
         <div className='main'>
@@ -52,8 +57,10 @@ const AccessRecord = () => {
                                         class="input input-border border-black w-full max-w-xs"
                                         {...register("name")}
                                         onChange={(e) => setSearch(e.target.value)}
+                                        value={value}
+                                        contentEditable='true'
                                     />
-                                    <select name="value" id="">
+                                    <select className='accessRecord' onClick={(e)=>setValue(e.target.value)} id=""size={filter.length}>
                                         {
                                             filter.map(flt => <option>
                                                 {flt.name.common}
