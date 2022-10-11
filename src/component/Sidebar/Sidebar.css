@@ -1,0 +1,128 @@
+.sidebar {
+    margin: 0;
+    padding: 0;
+    width: 270px;
+    height: 550px;
+    background-color: white;
+    margin-block-start: 60px;
+    border-top-right-radius: 30px;
+    border-end-end-radius: 30px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    position: fixed;
+    z-index: 4;
+}
+
+.toggleIcon {
+    width: 1em;
+    height: 1em;
+    background-color: orange;
+    border-radius: 50%;
+    cursor: pointer;
+    position: absolute;
+    right: -10px;
+    top: 80px;
+}
+
+.top {
+    text-align: center;
+    font-size: 25px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: 600;
+}
+
+.top span {
+    color: blue;
+}
+
+
+.middle input {
+    width: 150px;
+    border: none;
+    outline: none;
+    margin-left: 10px;
+    font-size: 15px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 400;
+}
+
+.search {
+    display: flex;
+    margin-left: 20px;
+}
+
+.search .icon {
+    color: rgb(84, 84, 236);
+}
+
+.middle ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.middle ul li {
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+    padding: 5px;
+    padding-left: 20px;
+    width: 230px;
+    cursor: pointer;
+}
+
+.decoration {
+    text-decoration: none;
+    color: black;
+}
+
+.middle ul li:hover {
+    background-color: rgb(248, 227, 186);
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
+
+.middle ul li .icon {
+    color: rgb(84, 84, 236);
+}
+
+.middle ul li span {
+    margin-left: 10px;
+    font-size: 15px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 400;
+}
+
+.change {
+    background-color: rgb(230, 225, 225);
+    color: orange;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
+
+.hide .toggleIcon{
+    transform: rotate(180deg)
+}
+
+.hide{
+    height: 550px;
+    width: 80px;
+    margin-left: 0;
+}
+.hide .top{
+    display: none;
+}
+.hide .select span{
+    display: none;
+}
+.hide .search input{
+    display: none;
+}
+.hide .middle ul li {
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+    padding: 5px;
+    padding-left: 20px;
+    width: 40px;
+    cursor: pointer;
+}

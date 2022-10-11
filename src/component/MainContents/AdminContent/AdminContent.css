@@ -1,0 +1,109 @@
+.main {
+    width: 950px;
+    position: static;
+    padding-top: 60px;
+    /* margin-left: 300px; */
+
+}
+
+.itemContainer{
+    margin-left: 250px;
+    width: 100%;
+    position: fixed;
+    z-index: 2;
+}
+
+
+.hide .itemContainer{
+    width: 100%;
+    margin-left: 70px;
+}
+.hide .formDiv{
+    margin-left: 150px;
+    width: 1100px;
+}
+.hide .items{
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    width: 100%;
+    display: flex;
+    float: left;
+    cursor: pointer;
+}
+.items{
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    width: 100%;
+    display: flex;
+    float: left;
+    cursor: pointer;
+}
+.item{
+    margin: 15px;
+    margin-left: 15px;
+    border-radius: 10px;
+    background-color: rgb(250, 247, 247);
+    border: 1px solid rgb(248, 231, 231);
+    padding: 5px;
+}
+.item1{
+    margin-left: 60px;
+}
+.item:hover{
+    background-color: antiquewhite;
+    color: orange;
+}
+
+.navColor{
+    background-color: antiquewhite;
+    color: orange;
+}
+
+.formDiv{
+    margin-left: 300px;
+    border-radius: 20px;
+    padding: 10px;
+    width: 100%;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.formContainer{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+}
+
+.field input,select{
+    border: 1px solid rgb(229, 226, 226);
+    border-radius: 10px;
+    width: 100%;
+}
+ select{
+    
+    height: 35px;
+}
+
+.field .label{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: smaller;
+}
+.submitInfo input{
+    margin-right: 10px;
+
+}
+.submit{
+    border: 1px solid rgb(141, 222, 21);
+    border-radius: 20px;
+    width: 90px;
+    padding: 5px;
+}
+
+.submit2{
+    background-color:rgb(48, 222, 21); ;
+}
+
+/* Leave section */
+.field .date{
+    height: 30px;
+}

@@ -1,0 +1,68 @@
+.pastEmployee{
+    margin-left: 20px;
+}
+.pastEmployee label span{
+    margin-block-end: auto;
+    font-size: small;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.pastEmployee input{
+    border: 1px solid rgb(212, 210, 210);
+    border-radius: 10px;
+    width: 300px;
+    padding-left: 10px;
+}
+
+.notePara{
+    margin: 0;
+    padding: 0;
+    margin-top: 0;
+}
+.note{
+    background-color: rgb(227, 222, 222);
+    color: rgb(141, 122, 122);
+}
+
+  /* Administrator dropdown */
+ .navAmi ul{
+    margin-top: 20px;
+ } 
+ ul{
+    list-style: none;
+
+ }
+.navAmi ul ul{
+    margin: 0;
+    padding: 0;
+}
+  
+ .navAmi ul li ul {
+    
+    background-color: white;
+    color: gray;
+    font-size: small;
+    visibility: hidden;
+    min-width: 140px;
+    border-radius: 10px;
+    position:absolute;
+    transition: all 0.5s ease;
+    margin-top: -5px;
+    margin-left: 55px;
+    z-index: 7;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  }
+  .navAmi ul li ul li{
+    margin-left: 15px;
+    padding: 0;
+    margin-top: 8px;
+  }
+  
+ .navAmi ul li:hover > ul,
+ .navAmi ul li .proName:hover {
+    visibility: visible;
+    opacity: 1;
+    top: 70px;
+  }
+  .dropdown{
+    cursor: pointer;
+  }

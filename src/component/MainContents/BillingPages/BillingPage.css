@@ -1,0 +1,111 @@
+.billHeading{
+    display: flex;
+}
+
+.billHeading img{
+    height: 90px;
+    width: 90px;
+    margin-left: 100px;
+}
+
+.billHeading .title{
+    text-align: center;
+    margin-left: 110px;
+
+}
+.billContent{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+.billName, .meterNumber, .BillFooter{
+    margin-left: 50px;
+}
+.billName .name{
+    margin-left: 30px;
+}
+.billName .bill{
+    margin-left: 20px;
+}
+.billName .office{
+    margin-left: 30px;
+}
+.billName .location{
+    margin-left: 10px;
+}
+
+.officeInfo .month p:nth-child(even){
+    margin-left: 15px;
+}
+.costSystem .colony{
+margin-left: 40px;
+}
+.costSystem .bill{
+margin-left: 10px;
+}
+.billName span, .billDesignation span{
+    text-transform: uppercase;
+}
+sup {
+        vertical-align: text-top;
+        font-size: 14px;
+    }
+
+.dsgPera{
+    margin-left: 165px;
+}
+
+.officeInfo{
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+}
+
+.billMiddle{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.billMiddle p{
+    margin: 5px;
+    padding: 5px;
+}
+
+.numberAlign{
+    display: flex;
+}
+.numberAlign p:nth-child(odd){
+    text-align: end;
+    width: 180px;
+}
+.numberAlign .meterDigit{
+    padding-left: 17px;
+}
+.numberAlign .dateNumber{
+    padding-left:40px ;
+}
+.numberAlign .unit{
+    padding-left: 65px;
+}
+.chargeAlign{
+    display: flex;
+}
+.chargeAlign p:nth-child(odd){
+    text-align: end;
+    width: 135px;
+}
+.chargeAlign p:nth-child(even){
+    text-align: end;
+    width: 90px;
+}
+
+.chargeAlign p span{
+    width: 100px;
+}
+.underline{
+    margin: 0;
+    padding: 0;
+    border: 1px solid rgb(104, 104, 104);
+    width: 110px;
+    margin-left: 145px;
+}
+.highphen{
+    border: dashed;
+}
