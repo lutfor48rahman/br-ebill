@@ -126,3 +126,12 @@
     width: 40px;
     cursor: pointer;
 }
+@media screen and (max-width:768px) {
+    .toggleIcon{
+        visibility: hidden;
+        /* width: 100%; */
+    }
+    .sidebar{
+        visibility: hidden;
+    }
+}

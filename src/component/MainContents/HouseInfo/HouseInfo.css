@@ -1,0 +1,172 @@
+.house{
+    border: 3px solid rgb(107, 107, 245);
+    border-radius: 10px;
+}
+.headingHouse{
+    margin: 0;
+    text-align: start;
+    /* background-color: blue; */
+    border-radius: 5px;
+    color: white;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    padding: 10px;
+}
+.formHeading{
+    margin: 10px;
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    grid-gap: 10px;
+}
+.div1, .div4{
+    /* margin-right: 5px; */
+    background-color: rgb(189, 189, 57);
+    border-radius: 2px;
+    text-align: end;
+    border: outset;
+}
+.div1 span{
+    margin-right: 10px;
+}
+.div4 span{
+    margin-right: 10px;
+}
+.div2, .div3, .div5, .div6{
+    background-color: green;
+    border-radius: 2px;
+
+}
+
+.houseColumns{
+    margin: 10px;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr 2fr;
+    /* grid-template-columns: repeat(6,1fr); */
+    grid-gap: 10px;
+}
+
+.column1 div{
+    margin-bottom: 5px;
+    background-color: gray;
+    border: outset;
+    text-align: end;
+}
+
+.column1 div span{
+    margin-right: 10px;
+
+}
+.column2{
+    /* background-color: gray; */
+    width: 325px;
+}
+.column2 .col2-section1,.column2 .col2-section3,
+.column4 .col2-section1,.column4 .col2-section3{
+    margin-bottom: 5px;
+    border: outset;
+}
+.column2 .col2-section2 div{
+    border: outset;
+    text-align: end;
+    width: 160px;
+}
+.column2 .col2-section1, .col2-section3{
+    background-color: white;
+    /* width: 350px; */
+}
+.col2-section2{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 5px;
+}
+.column2 .col2-section2 div:nth-child(odd){
+    background-color: white;
+}
+.column2 .col2-section2 div:nth-child(even){
+    background-color: gray;
+}
+.column2 .col2-section3{
+    margin-top: 5px;
+}
+.column3{
+    width: 115px;
+    margin-left: 10px;
+}
+.column3 div{
+    margin-bottom: 5px;
+    border: outset;
+}
+.column3 div:first-child{
+    width: 90px;
+    margin-left: 12px;
+    background-color: gray;
+    text-align: end;
+    padding-right: 5px;
+}
+.column3 div:last-child{
+    background-color: gray;
+    margin-left: -10px;
+    padding-left: 5px;
+}
+.column4{
+    margin-left: -15px;
+}
+.column4 .col2-section2 div:nth-child(odd){
+    background-color: gray;
+    text-align: end;
+}
+.column4 .col2-section2 div{
+    border: outset;
+}
+.column4 .no{
+    background-color: red;
+}
+.column4 .yes{
+    background-color: green;
+}
+.column4 .col2-section3{
+    margin-top: 5px;
+}
+
+.updateRecord{
+    display: flex;
+    margin: 10px;
+    margin-left: 30px;
+}
+
+.updateRecord .icon{
+    color: gray;
+    background-color: antiquewhite;
+    margin: 5px;
+    border-radius: 3px;
+}
+.updateRecord input{
+    border: 1px solid rgb(202, 197, 197);
+    border-radius: 5px;
+    height: 20px;
+    margin-top: 5px;
+    padding-left: 5px;
+}
+.updateRecord button{
+    margin: 5px;
+    width: 100px;
+    border-radius: 5px;
+    border: 1px solid rgb(222, 218, 218);
+}
+.billTable table,th,td{
+    border: 1px solid black;
+    border-collapse: collapse;
+    margin: 10px;
+    width: 850px;
+}
+.billTable th{
+    text-align: start;
+}
+.billTable .data td{
+ color: blue;
+ text-align: end;
+}
+.billTable .data td:nth-child(2){
+    text-align: start;
+}

@@ -108,6 +108,7 @@ const Employee = () => {
                                     <br />
                                     <input
                                         type="text"
+                                        class="input input-border border-black w-full max-w-xs"
                                         placeholder='--select--'
                                         {...register("unit")}
                                     />

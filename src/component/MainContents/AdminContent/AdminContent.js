@@ -68,7 +68,7 @@ const AdminContent = () => {
                                     <input
                                         type="text"
                                         placeholder='Type for hints..'
-                                        class=""
+                                        class="input input-border border-black w-full max-w-xs"
                                         {...register("empName")}
                                     />
                                 </div>
@@ -79,6 +79,7 @@ const AdminContent = () => {
                                     <br />
                                     <input
                                         type="text"
+                                        class="input input-border border-black w-full max-w-xs"
                                         placeholder='--select--'
                                         {...register("status")}
                                     />

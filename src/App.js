@@ -20,6 +20,8 @@ import Administrator from "./component/MainContents/Administrator/Administrator"
 import MainAdministrator from "./component/MainContents/Administrator/MainAdministrator";
 import Candidate from "./component/MainContents/Administrator/Candidate";
 import AccessRecord from "./component/MainContents/Administrator/AccessRecord";
+import HouseInfoForm from "./component/MainContents/HouseInfo/HouseInfoForm";
+import Report from "./component/MainContents/Report/Report";
 
 
 function App() {
@@ -40,10 +42,12 @@ function App() {
         <Route path="/signup" element={<SignUp></SignUp>}></Route>
         <Route path="/admin" element={<AdminContent></AdminContent>}></Route>
         <Route path="/leave" element={<Leave></Leave>}></Route>
+        <Route path="/house-info" element={<HouseInfoForm></HouseInfoForm>}></Route>
         <Route path="/employee" element={<Employee></Employee>}></Route>
         <Route path="/bill" element={<BillingPage></BillingPage>}></Route>
         <Route path="/department" element={<Department></Department>}></Route>
         <Route path="/division" element={<Division></Division>}></Route>
+        <Route path="report" element={<Report></Report>}></Route>
         <Route path='/add-user' element={<AddUser></AddUser>}>
           <Route path="users" element={<User></User>}></Route>
           <Route path="edit-employee-info/:id" element={<EditEmployeeInfo></EditEmployeeInfo>}></Route>

@@ -71,13 +71,13 @@ const Sidebar = () => {
                             <span>Employee</span>
                         </li>
                     </Link>
-                    <Link className='decoration' to='/leave'>
+                    {/* <Link className='decoration' to='/leave'>
                         <li className='select'>
                             <PeopleOutlineIcon className='icon'></PeopleOutlineIcon>
                             <span>Leave</span>
                         </li>
-                    </Link>
-                    <Link className='decoration' to='/time'>
+                    </Link> */}
+                    <Link className='decoration' to='/house-info'>
                         <li className='select'>
                             <AccessTimeIcon className='icon'></AccessTimeIcon>
                             <span>Meter Book</span>
@@ -101,7 +101,7 @@ const Sidebar = () => {
                             <span>Department</span>
                         </li>
                     </Link>
-                    <Link className='decoration' to='/directory'>
+                    <Link className='decoration' to='/report'>
                         <li className='select'>
                             <FolderSharedOutlinedIcon className='icon'></FolderSharedOutlinedIcon>
                             <span>Report</span>
