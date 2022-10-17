@@ -19,9 +19,9 @@ import Division from "./component/MainContents/Devision/Division";
 import Administrator from "./component/MainContents/Administrator/Administrator";
 import MainAdministrator from "./component/MainContents/Administrator/MainAdministrator";
 import Candidate from "./component/MainContents/Administrator/Candidate";
-import AccessRecord from "./component/MainContents/Administrator/AccessRecord";
 import HouseInfoForm from "./component/MainContents/HouseInfo/HouseInfoForm";
 import Report from "./component/MainContents/Report/Report";
+import Entitys from "./component/MainContents/Administrator/Entitys";
 
 
 function App() {
@@ -38,7 +38,14 @@ function App() {
       }
 
       <Routes>
-        <Route path="/" element={<Login></Login>}></Route>
+        {
+          !user &&
+          <Route path="/" element={<Login></Login>}></Route>
+        }
+        {
+          user &&
+          <Route path="/" element={<AdminContent></AdminContent>}></Route>
+        }
         <Route path="/signup" element={<SignUp></SignUp>}></Route>
         <Route path="/admin" element={<AdminContent></AdminContent>}></Route>
         <Route path="/leave" element={<Leave></Leave>}></Route>
@@ -55,7 +62,7 @@ function App() {
         <Route path="/mainAdministrator" element={<MainAdministrator></MainAdministrator>}>
           <Route index element={<Administrator></Administrator>}></Route>
           <Route path="vacancy" element={<Candidate></Candidate>}></Route>
-          <Route path="access-record" element={<AccessRecord></AccessRecord>}></Route>
+          <Route path="access-record" element={<Entitys></Entitys>}></Route>
         </Route>
       </Routes>
       <ToastContainer />

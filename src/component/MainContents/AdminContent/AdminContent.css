@@ -92,8 +92,9 @@
 }
 
 .field .label{
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: smaller;
+    /* font-family: Arial, Helvetica, sans-serif; */
+    font-family: 'Poppins';
+    font-size: 15px;
 }
 .submitInfo{
     margin-top: 15px;
@@ -104,14 +105,15 @@
 
 }
 .submit{
-    border: 1px solid rgb(141, 222, 21);
+    border: 1px solid rgba(0, 104, 71, 1);
     border-radius: 20px;
     width: 90px;
     padding: 5px;
 }
 
 .submit2{
-    background-color:rgb(48, 222, 21); ;
+    background-color: rgba(0, 104, 71, 1);
+    color: white;
 }
 
 /* Leave section */

@@ -15,6 +15,20 @@ const AdminContent = () => {
         })
     },[])
 
+    const userRoles = [
+        {name:'--select--'},
+        {name:'Contributor'},
+        {name:'Author'},
+        {name:'Administrator'},
+        {name:'Super Admin'},
+    ]
+
+    const status = [
+        {name:'--select--'},
+        {name:'Active'},
+        {name:'Inactive'},
+    ]
+
     return (
         <div className='main'>
             <div className='adminContents'>
@@ -53,12 +67,15 @@ const AdminContent = () => {
                                         <span class="label-text">User Role</span>
                                     </label>
                                     <br />
-                                    <input
-                                        type="text"
-                                        placeholder='--select--'
-                                        class="input input-border border-black w-full max-w-xs"
-                                        {...register("role")}
-                                    />
+                                    <select {...register("role")}>
+                                        {
+                                            userRoles.map(role=> <option
+                                            value={role.name}
+                                            >
+                                                {role.name}
+                                            </option>)
+                                        }
+                                    </select>
                                 </div>
                                 <div className='field'>
                                     <label class="label">
@@ -77,12 +94,15 @@ const AdminContent = () => {
                                         <span class="label-text">Status</span>
                                     </label>
                                     <br />
-                                    <input
-                                        type="text"
-                                        class="input input-border border-black w-full max-w-xs"
-                                        placeholder='--select--'
-                                        {...register("status")}
-                                    />
+                                    <select {...register("status")}>
+                                        {
+                                            status.map(st=> <option
+                                            value={st.name}
+                                            >
+                                                {st.name}
+                                            </option>)
+                                        }
+                                    </select>
                                 </div>
                             </div>
                             <hr />

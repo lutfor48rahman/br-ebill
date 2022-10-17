@@ -19,7 +19,7 @@ const BillingPage = () => {
                     <div className="billName">
                         <p className='name'>Name: &nbsp;&nbsp;<span><sup>md riad ahmed</sup></span></p>
                         <p className='bill'>Bill No: &nbsp;&nbsp;<span><sup>153.027</sup></span></p>
-                        <p className='house'>House No: &nbsp;&nbsp;<span><sup>E/005</sup></span></p>
+                        <p className=''>House No: &nbsp;&nbsp;<span><sup>E/005</sup></span></p>
                         <p className='office'>Office: &nbsp;&nbsp;<span><sup>dd/lkm/aka/proj</sup></span></p>
                         <p className='location'>Location: &nbsp;&nbsp;<span><sup>Dhaka</sup></span></p>
                     </div>
@@ -120,7 +120,7 @@ const BillingPage = () => {
                 <div className="billName">
                         <p className='name'>Name: &nbsp;&nbsp;<span><sup>md riad ahmed</sup></span></p>
                         <p className='bill'>Bill No: &nbsp;&nbsp;<span><sup>153.027</sup></span></p>
-                        <p className='house'>House No: &nbsp;&nbsp;<span><sup>E/005</sup></span></p>
+                        <p className=''>House No: &nbsp;&nbsp;<span><sup>E/005</sup></span></p>
                         <p className='office'>Office: &nbsp;&nbsp;<span><sup>dd/lkm/aka/proj</sup></span></p>
                         <p className='location'>Location: &nbsp;&nbsp;<span><sup>Dhaka</sup></span></p>
                     </div>

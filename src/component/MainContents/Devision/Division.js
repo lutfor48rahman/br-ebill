@@ -5,6 +5,7 @@ const Division = () => {
     const [name, setName] = useState('');
     // console.log(names);
     const divisions = [
+        { name: '--select--' },
         { name: 'Mymensingha' },
         { name: 'Dhaka' },
         { name: 'Rajshahi' },

@@ -9,15 +9,18 @@ import SubNavbar from './SubNavbar';
 const Employee = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
 
-    // useEffect(()=>{
-    //     const sideMenus = document.querySelectorAll('.subNav');
-    //     sideMenus.forEach(sideMenu=>{
-    //         sideMenu.addEventListener('click', function(){
-    //             sideMenus.forEach(lnk => lnk.classList.remove('navColor'))
-    //     this.classList.add('navColor')
-    //         })
-    //     })
-    // },[])
+    const status = [
+        {name:'--select--'},
+        {name:'Full time'},
+        {name:'Part time'},
+    ]
+
+    const titles = [
+        {name:'--select--'},
+        {name:'IOS Developer'},
+        {name:'Web Develovelper'},
+        {name:'UI UX Designer'},
+    ]
 
     return (
         <div className='main'>
@@ -58,12 +61,15 @@ const Employee = () => {
                                         <span class="label-text">Employee Status</span>
                                     </label>
                                     <br />
-                                    <input
-                                        type="text"
-                                        placeholder='--select--'
-                                        class="input input-border border-black w-full max-w-xs"
-                                        {...register("status")}
-                                    />
+                                    <select {...register("status")}>
+                                        {
+                                            status.map(st=> <option 
+                                            value={st.name}
+                                            >
+                                                {st.name}
+                                            </option>)
+                                        }
+                                    </select>
                                 </div>
                                 <div className='field'>
                                     <label class="label">
@@ -94,12 +100,15 @@ const Employee = () => {
                                         <span class="label-text">Job Title</span>
                                     </label>
                                     <br />
-                                    <input
-                                        type="text"
-                                        placeholder='--select--'
-                                        class="input input-border border-black w-full max-w-xs"
-                                        {...register("title")}
-                                    />
+                                    <select {...register('title')}>
+                                        {
+                                            titles.map(title=> <option 
+                                            value={title.name}
+                                            >
+                                                {title.name}
+                                            </option>)
+                                        }
+                                    </select>
                                 </div>
                                 <div className='field'>
                                     <label class="label">

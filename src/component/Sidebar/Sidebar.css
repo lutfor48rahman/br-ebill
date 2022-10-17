@@ -41,7 +41,8 @@
     outline: none;
     margin-left: 10px;
     font-size: 15px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
+    font-family: 'Poppins';
     font-weight: 400;
 }
 
@@ -83,12 +84,14 @@
 
 .middle ul li .icon {
     color: rgb(84, 84, 236);
+    font-size: 30px;
 }
 
 .middle ul li span {
     margin-left: 10px;
-    font-size: 15px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
+    font-family: 'Poppins';
     font-weight: 400;
 }
 
@@ -109,7 +112,8 @@
     margin-left: 0;
 }
 .hide .top{
-    display: none;
+    /* display: none; */
+    visibility: hidden;
 }
 .hide .select span{
     display: none;

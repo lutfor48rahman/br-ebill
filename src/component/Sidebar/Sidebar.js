@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './Sidebar.css';
-import KeyIcon from '@mui/icons-material/Key';
+import SearchIcon from '@mui/icons-material/Search';
 import AdminPanelSettingsOutlinedIcon from '@mui/icons-material/AdminPanelSettingsOutlined';
 import ManageAccountsOutlinedIcon from '@mui/icons-material/ManageAccountsOutlined';
 import PeopleOutlineIcon from '@mui/icons-material/PeopleOutline';
@@ -55,7 +55,7 @@ const Sidebar = () => {
                 <ul>
 
                     <div className='search'>
-                        <KeyIcon className='icon'></KeyIcon>
+                        <SearchIcon className='icon'></SearchIcon>
                         <input type="text" placeholder='Search' />
                     </div>
                     <hr />
