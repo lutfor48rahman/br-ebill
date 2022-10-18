@@ -18,18 +18,25 @@ const Login = () => {
         user,
         loading,
         error,
-    ] = useSignInWithEmailAndPassword(auth);
+      ] = useSignInWithEmailAndPassword(auth);
+
     const navigate = useNavigate();
 
-    const onSubmit = data => {
+    const onSubmit = async (data) => {
 
-        signInWithEmailAndPassword(data.email, data.password);
-
-        navigate('/admin');
-        toast('Successfully login...!');
+        try {
+            var res = await signInWithEmailAndPassword( data.email, data.password);
+            if(res){
+                console.log("Loged in");
+            }else{
+                console.log("not Loged in");
+            }
+          } catch (err) {
+            console.error(err);
+            alert(err.message);
+          }
 
     };
-
 
     return (
         <div className='bgImage'>

@@ -1,33 +1,66 @@
 import React, { useEffect } from 'react';
 import './AdminContent.css';
-import { useForm } from "react-hook-form";
+import { CircularProgressbar } from 'react-circular-progressbar';
+import 'react-circular-progressbar/dist/styles.css';
+import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 
 const AdminContent = () => {
-    const { register, handleSubmit, formState: { errors } } = useForm();
 
-    useEffect(()=>{
+    useEffect(() => {
         const sideMenus = document.querySelectorAll('.subNav');
-        sideMenus.forEach(sideMenu=>{
-            sideMenu.addEventListener('click', function(){
+        sideMenus.forEach(sideMenu => {
+            sideMenu.addEventListener('click', function () {
                 sideMenus.forEach(lnk => lnk.classList.remove('navColor'))
-        this.classList.add('navColor')
+                this.classList.add('navColor')
             })
         })
-    },[])
+    }, [])
+    let percentage = 55;
 
-    const userRoles = [
-        {name:'--select--'},
-        {name:'Contributor'},
-        {name:'Author'},
-        {name:'Administrator'},
-        {name:'Super Admin'},
-    ]
-
-    const status = [
-        {name:'--select--'},
-        {name:'Active'},
-        {name:'Inactive'},
-    ]
+    const data = [
+        {
+            name: 'Page A',
+            uv: 4000,
+            pv: 2400,
+            amt: 2400,
+        },
+        {
+            name: 'Page B',
+            uv: 3000,
+            pv: 1398,
+            amt: 2210,
+        },
+        {
+            name: 'Page C',
+            uv: 2000,
+            pv: 9800,
+            amt: 2290,
+        },
+        {
+            name: 'Page D',
+            uv: 2780,
+            pv: 3908,
+            amt: 2000,
+        },
+        {
+            name: 'Page E',
+            uv: 1890,
+            pv: 4800,
+            amt: 2181,
+        },
+        {
+            name: 'Page F',
+            uv: 2390,
+            pv: 3800,
+            amt: 2500,
+        },
+        {
+            name: 'Page G',
+            uv: 3490,
+            pv: 4300,
+            amt: 2100,
+        },
+    ];
 
     return (
         <div className='main'>
@@ -45,75 +78,43 @@ const AdminContent = () => {
                 </div>
                 <br /> <br /> <br /><br />
                 <div className='formDiv'>
-                    <p>System Users</p>
-                    <hr />
-                    <form onSubmit={handleSubmit()}>
-
-                        <div>
-                            <div class="formContainer">
-                                <div className='field'>
-                                    <label class="label">
-                                        <span class="label-text">Username</span>
-                                    </label>
-                                    <br />
-                                    <input
-                                        type="text"
-                                        class="input input-border border-black w-full max-w-xs"
-                                        {...register("name")}
-                                    />
-                                </div>
-                                <div className='field'>
-                                    <label class="label">
-                                        <span class="label-text">User Role</span>
-                                    </label>
-                                    <br />
-                                    <select {...register("role")}>
-                                        {
-                                            userRoles.map(role=> <option
-                                            value={role.name}
-                                            >
-                                                {role.name}
-                                            </option>)
-                                        }
-                                    </select>
-                                </div>
-                                <div className='field'>
-                                    <label class="label">
-                                        <span class="label-text">Employee Name</span>
-                                    </label>
-                                    <br />
-                                    <input
-                                        type="text"
-                                        placeholder='Type for hints..'
-                                        class="input input-border border-black w-full max-w-xs"
-                                        {...register("empName")}
-                                    />
-                                </div>
-                                <div className='field'>
-                                    <label class="label">
-                                        <span class="label-text">Status</span>
-                                    </label>
-                                    <br />
-                                    <select {...register("status")}>
-                                        {
-                                            status.map(st=> <option
-                                            value={st.name}
-                                            >
-                                                {st.name}
-                                            </option>)
-                                        }
-                                    </select>
-                                </div>
+                    <div className='charts'>
+                        <div className='pieProggress'>
+                            <div>
+                            <CircularProgressbar
+                                className='paiChart'
+                                value={percentage}
+                                strokeWidth={6}
+                                text={`${percentage}%`}
+                            />
                             </div>
-                            <hr />
-                            <div className='submitInfo'>
-                                <input className='submit submit1' type="submit" value='Reset' />
-                                <input className='submit submit2' type="submit" value='Search' />
-                            </div>
+                            <p className='title'>Total amount gain today</p> 
+                            <p className='amount'>$580</p>
+                            <p className='desc'> When you enter this token number into your electricity meter, your electricity bill payment will be completed</p>
                         </div>
-                    </form>
+                        <div>
+                            
+                                <AreaChart
+                                    width={650}
+                                    height={300}
+                                    data={data}
+                                    margin={{
+                                        top: 10,
+                                        right: 30,
+                                        left: 0,
+                                        bottom: 0,
+                                    }}
+                                >
+                                    {/* <CartesianGrid strokeDasharray="3 3" /> */}
+                                    <XAxis dataKey="name" />
+                                    <YAxis />
+                                    <Tooltip />
+                                    <Area type="monotone" dataKey="uv" stroke="#8884d8" fill="#8884d8" />
+                                </AreaChart>
+                        </div>
+                    </div>
+
                 </div>
-                {/* <Table></Table> */}
             </div>
         </div>
     );

@@ -22,10 +22,15 @@ import Candidate from "./component/MainContents/Administrator/Candidate";
 import HouseInfoForm from "./component/MainContents/HouseInfo/HouseInfoForm";
 import Report from "./component/MainContents/Report/Report";
 import Entitys from "./component/MainContents/Administrator/Entitys";
+import Loader from "./component/Loader/Loader";
+import RequireAuth from "./component/RequiredAuth/RequireAuth";
 
 
 function App() {
   const [user, loading, error] = useAuthState(auth);
+  if (loading) {
+    return <Loader></Loader>
+  }
   return (
     <div className="App">
 
@@ -42,28 +47,30 @@ function App() {
           !user &&
           <Route path="/" element={<Login></Login>}></Route>
         }
-        {
-          user &&
+        
+        
           <Route path="/" element={<AdminContent></AdminContent>}></Route>
-        }
-        <Route path="/signup" element={<SignUp></SignUp>}></Route>
-        <Route path="/admin" element={<AdminContent></AdminContent>}></Route>
-        <Route path="/leave" element={<Leave></Leave>}></Route>
-        <Route path="/house-info" element={<HouseInfoForm></HouseInfoForm>}></Route>
-        <Route path="/employee" element={<Employee></Employee>}></Route>
-        <Route path="/bill" element={<BillingPage></BillingPage>}></Route>
-        <Route path="/department" element={<Department></Department>}></Route>
-        <Route path="/division" element={<Division></Division>}></Route>
-        <Route path="report" element={<Report></Report>}></Route>
-        <Route path='/add-user' element={<AddUser></AddUser>}>
-          <Route path="users" element={<User></User>}></Route>
-          <Route path="edit-employee-info/:id" element={<EditEmployeeInfo></EditEmployeeInfo>}></Route>
-        </Route>
-        <Route path="/mainAdministrator" element={<MainAdministrator></MainAdministrator>}>
-          <Route index element={<Administrator></Administrator>}></Route>
-          <Route path="vacancy" element={<Candidate></Candidate>}></Route>
-          <Route path="access-record" element={<Entitys></Entitys>}></Route>
-        </Route>
+        
+          <Route path="/signup" element={<SignUp></SignUp>}></Route>
+          <Route path="/admin" element={<AdminContent></AdminContent>}></Route>
+          <Route path="/leave" element={<Leave></Leave>}></Route>
+          <Route path="/house-info" element={<HouseInfoForm></HouseInfoForm>}></Route>
+          <Route path="/employee" element={<Employee></Employee>}></Route>
+          {/* <RequireAuth> */}
+          <Route path="/bill" element={<BillingPage></BillingPage>}></Route>
+          <Route path="/department" element={<Department></Department>}></Route>
+          <Route path="/division" element={<Division></Division>}></Route>
+          <Route path="report" element={<Report></Report>}></Route>
+          <Route path='/add-user' element={<AddUser></AddUser>}>
+            <Route path="users" element={<User></User>}></Route>
+            <Route path="edit-employee-info/:id" element={<EditEmployeeInfo></EditEmployeeInfo>}></Route>
+          </Route>
+          <Route path="/mainAdministrator" element={<MainAdministrator></MainAdministrator>}>
+            <Route index element={<Administrator></Administrator>}></Route>
+            <Route path="vacancy" element={<Candidate></Candidate>}></Route>
+            <Route path="access-record" element={<Entitys></Entitys>}></Route>
+          </Route>
+        {/* </RequireAuth> */}
       </Routes>
       <ToastContainer />
     </div>

@@ -25,13 +25,13 @@ const Navbar = () => {
                         {/* <ArrowDropDownIcon/> */}
                         <ul className='dropdown'>
                             <li>
-                            <Link onClick={logout} to='' className='decoration'>About</Link>
+                            <Link to='' className='decoration'>About</Link>
                             </li>
                             <li>
-                            <Link onClick={logout} to='' className='decoration'>Support</Link>
+                            <Link to='' className='decoration'>Support</Link>
                             </li>
                             <li>
-                            <Link onClick={logout} to='' className='decoration'>Password Change</Link>
+                            <Link to='' className='decoration'>Password Change</Link>
                             </li>
                             <li>
                                 <Link onClick={logout} to='' className='decoration'>Logout</Link>
