@@ -3,9 +3,11 @@ import './Loader.css';
 
 const Loader = () => {
     return (
-        <div className="loader">
+       <div className='mainLoader'>
+         <div className="loader">
             
-        </div>
+            </div>
+       </div>
     );
 };
 

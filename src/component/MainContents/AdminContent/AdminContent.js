@@ -95,7 +95,7 @@ const AdminContent = () => {
                         <div>
                             
                                 <AreaChart
-                                    width={650}
+                                    width={550}
                                     height={300}
                                     data={data}
                                     margin={{

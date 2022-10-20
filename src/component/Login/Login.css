@@ -1,11 +1,16 @@
+.full{
+    /* height: 1000px;
+    width: 100%; */
+}
+
 .bgImage{
     background-image: url('https://opensource-demo.orangehrmlive.com/web/dist/img/blob.svg');
     background-color: orange;
-    height: 550px; 
+    height: 100vh;
     background-position: left; 
     background-repeat: no-repeat; 
     background-size: 80% 100%;
-    padding: 2rem 5rem;
+    /* padding: 2rem 5rem; */
 }
 .bgImage .logo{
     background-color: #F2F3F5;

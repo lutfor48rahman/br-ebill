@@ -7,24 +7,32 @@ import picture from '../../image/profile.jpg';
 
 const User = () => {
     const departments = [
-        {name:'--select--'},
-        {name:'HR '},
-        {name:'IOS developer'},
-        {name:'Web developer'},
-        {name:'Full stack developer'},
+        { name: '--select--' },
+        { name: 'HR ' },
+        { name: 'IOS developer' },
+        { name: 'Web developer' },
+        { name: 'Full stack developer' },
     ]
 
     const divisions = [
-        {name:'--select--'},
-        {name:'Mymensingha'},
-        {name:'Dhaka'},
-        {name:'Rajshahi'},
-        {name:'Rongpur'},
-        {name:'Khulna'},
-        {name:'sylhet'},
-        {name:'Borishal'},
-        {name:'Chattogram'},
+        { name: '--select--' },
+        { name: 'Mymensingha' },
+        { name: 'Dhaka' },
+        { name: 'Rajshahi' },
+        { name: 'Rongpur' },
+        { name: 'Khulna' },
+        { name: 'sylhet' },
+        { name: 'Borishal' },
+        { name: 'Chattogram' },
 
+    ]
+
+    const categories = [
+        { name: '--select--' },
+        { name: 'Entry Level' },
+        { name: 'Junior' },
+        { name: 'Mid Level' },
+        { name: 'Senior' }
     ]
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
 
@@ -40,23 +48,6 @@ const User = () => {
 
     }
 
-    useEffect(()=>{
-        const loginForm = document.getElementById('loginFormContainer');
-        const identity = document.getElementById('rate');
-        identity.addEventListener('click',function(){
-            const clicked = identity.checked;
-            if(clicked === true){
-                loginForm.classList.remove("displayNone");
-                console.log(loginForm);
-            }
-            else{
-                loginForm.classList.add('displayNone');
-            }
-        })
-       
-        
-        
-    },[])
     return (
         <div className=''>
             <p>Add Employee</p>
@@ -92,17 +83,37 @@ const User = () => {
                             </div>
                             <div className='field'>
                                 <label class="label">
+                                    <span class="label-text">Email</span>
+                                </label>
+                                <br />
+                                <input
+                                    type="email"
+                                    class="input input-border border-black w-full max-w-xs"
+                                    placeholder='your email'
+                                    {...register("email", {
+                                        required: {
+                                            value: true,
+                                            message: 'Email is required..'
+                                        }
+                                    })}
+                                />
+                                <label class="label">
+                                    {errors.email?.type === 'required' && <span class="label-text-alt text-red-500">{errors.email.message}</span>}
+                                </label>
+                            </div>
+                            <div className='field'>
+                                <label class="label">
                                     <span class="label-text">Division</span>
                                 </label>
                                 <br />
                                 <select {...register("division")}>
                                     {
-                                        divisions.map(division=> 
-                                        <option
-                                        value ={ division.name}
-                                        >
-                                            {division.name}
-                                        </option>)
+                                        divisions.map(division =>
+                                            <option
+                                                value={division.name}
+                                            >
+                                                {division.name}
+                                            </option>)
                                     }
                                 </select>
                                 <label class="label">
@@ -111,16 +122,15 @@ const User = () => {
                             </div>
                             <div className='field'>
                                 <label class="label">
-                                    <span class="label-text">Department</span>
+                                    <span class="label-text">Category</span>
                                 </label>
-                                <br />
-                                <select  {...register("department")}>
+                                <select {...register("division")}>
                                     {
-                                        departments.map(department => 
+                                        categories.map(category =>
                                             <option
-                                            value={department.name}
+                                                value={category.name}
                                             >
-                                                {department.name}
+                                                {category.name}
                                             </option>)
                                     }
                                 </select>
@@ -131,6 +141,44 @@ const User = () => {
                             <div className='field'>
                                 <label class="label">
                                     <span class="label-text">Bill Unit</span>
+                                </label>
+                                <br />
+                                <select {...register("division")}>
+                                    {
+                                        divisions.map(division =>
+                                            <option
+                                                value={division.name}
+                                            >
+                                                {division.name}
+                                            </option>)
+                                    }
+                                </select>
+                                <label class="label">
+                                    {errors.bill?.type === 'required' && <span class="label-text-alt text-red-500">{errors.bill.message}</span>}
+                                </label>
+                            </div>
+                            <div className='field'>
+                                <label class="label">
+                                    <span class="label-text">Salary Unit</span>
+                                </label>
+                                <br />
+                                <select {...register("division")}>
+                                    {
+                                        divisions.map(division =>
+                                            <option
+                                                value={division.name}
+                                            >
+                                                {division.name}
+                                            </option>)
+                                    }
+                                </select>
+                                <label class="label">
+                                    {errors.bill?.type === 'required' && <span class="label-text-alt text-red-500">{errors.bill.message}</span>}
+                                </label>
+                            </div>
+                            <div className='field'>
+                                <label class="label">
+                                    <span class="label-text">Office Name</span>
                                 </label>
                                 <br />
                                 <input
@@ -194,19 +242,111 @@ const User = () => {
                             </div>
                             <div className='field'>
                                 <label class="label">
-                                    <span class="label-text">Working place address</span>
+                                    <span class="label-text">Billing Stoped ?</span>
+                                </label>
+                                <br />
+                                <div className='billingStop'>
+                                    <div className='radio'>
+                                        <input type="radio" id="html" name="fav_language" value="yes" checked />
+                                        <span> Yes</span>
+                                    </div>
+                                    <div className='radio'>
+                                        <input type="radio" id="html" name="fav_language" value="no" />
+                                        <span>No</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className='field'>
+                                <label class="label">
+                                    <span class="label-text">Status</span>
                                 </label>
                                 <br />
                                 <input
                                     type="text"
                                     class="input input-border border-black w-full max-w-xs"
-                                    {...register("place", {
+                                    {...register("status", {
                                         required: {
                                             value: true,
-                                            message: 'place is required..'
+                                            message: 'Status is required..'
                                         }
                                     })}
                                 />
+                                <label class="label">
+                                    {errors.status?.type === 'required' && <span class="label-text-alt text-red-500">{errors.status.message}</span>}
+                                </label>
+                            </div>
+                            <div className='field'>
+                                <label class="label">
+                                    <span class="label-text">Book No</span>
+                                </label>
+                                <br />
+                                <select {...register("division")}>
+                                    {
+                                        divisions.map(division =>
+                                            <option
+                                                value={division.name}
+                                            >
+                                                {division.name}
+                                            </option>)
+                                    }
+                                </select>
+                                <label class="label">
+                                    {errors.bookNo?.type === 'required' && <span class="label-text-alt text-red-500">{errors.bookNo.message}</span>}
+                                </label>
+                            </div>
+                            <div className='field'>
+                                <label class="label">
+                                    <span class="label-text">Book Name</span>
+                                </label>
+                                <br />
+                                <select {...register("division")}>
+                                    {
+                                        divisions.map(division =>
+                                            <option
+                                                value={division.name}
+                                            >
+                                                {division.name}
+                                            </option>)
+                                    }
+                                </select>
+                                <label class="label">
+                                    {errors.bookname?.type === 'required' && <span class="label-text-alt text-red-500">{errors.bookname.message}</span>}
+                                </label>
+                            </div>
+                            <div className='field'>
+                                <label class="label">
+                                    <span class="label-text">Book Page</span>
+                                </label>
+                                <br />
+                                <select {...register("bookPage")}>
+                                    {
+                                        divisions.map(division =>
+                                            <option
+                                                value={division.name}
+                                            >
+                                                {division.name}
+                                            </option>)
+                                    }
+                                </select>
+                                <label class="label">
+                                    {errors.bookPage?.type === 'required' && <span class="label-text-alt text-red-500">{errors.bookPage.message}</span>}
+                                </label>
+                            </div>
+                            <div className='field'>
+                                <label class="label">
+                                    <span class="label-text">Book Sequence</span>
+                                </label>
+                                <br />
+                                <select {...register("location")}>
+                                    {
+                                        divisions.map(division =>
+                                            <option
+                                                value={division.name}
+                                            >
+                                                {division.name}
+                                            </option>)
+                                    }
+                                </select>
                                 <label class="label">
                                     {errors.place?.type === 'required' && <span class="label-text-alt text-red-500">{errors.place.message}</span>}
                                 </label>
@@ -239,16 +379,16 @@ const User = () => {
                             </div>
                             <div className='field'>
                                 <label class="label">
-                                    <span class="label-text">Salary</span>
+                                    <span class="label-text">Colony</span>
                                 </label>
                                 <br />
                                 <input
                                     type="text"
                                     class="input input-border border-black w-full max-w-xs"
-                                    {...register("salary", {
+                                    {...register("colony", {
                                         required: {
                                             value: true,
-                                            message: 'salary is required..'
+                                            message: 'colony is required..'
                                         },
                                         pattern: {
                                             value: /[0-9]/,
@@ -257,7 +397,7 @@ const User = () => {
                                     })}
                                 />
                                 <label class="label">
-                                    {errors.salary?.type === 'required' && <span class="label-text-alt text-red-500">{errors.salary.message}</span>}
+                                    {errors.colony?.type === 'required' && <span class="label-text-alt text-red-500">{errors.colony.message}</span>}
                                 </label>
                                 <label class="label">
                                     {errors.salary?.type === 'pattern' && <span class="label-text-alt text-red-500">{errors.salary.message}</span>}
@@ -265,26 +405,7 @@ const User = () => {
                             </div>
                             <div className='field'>
                                 <label class="label">
-                                    <span class="label-text">Meter Number</span>
-                                </label>
-                                <br />
-                                <input
-                                    type="text"
-                                    class="input input-border border-black w-full max-w-xs"
-                                    {...register("meter", {
-                                        required: {
-                                            value: true,
-                                            message: 'meter is required..'
-                                        }
-                                    })}
-                                />
-                                <label class="label">
-                                    {errors.meter?.type === 'required' && <span class="label-text-alt text-red-500">{errors.meter.message}</span>}
-                                </label>
-                            </div>
-                            <div className='field'>
-                                <label class="label">
-                                    <span class="label-text">Meter book address</span>
+                                    <span class="label-text">OCC Date</span>
                                 </label>
                                 <br />
                                 <input
@@ -301,73 +422,65 @@ const User = () => {
                                     {errors.book?.type === 'required' && <span class="label-text-alt text-red-500">{errors.book.message}</span>}
                                 </label>
                             </div>
-
-
-                        </div>
-                        <br /> <hr />
-                        <div className='toggle formBox'>
-                            <div className='loginToggle'>
-                                <p>Create Login Details</p>
-                                <label class="switch">
-                                    <input id='rate' type="checkbox"/>
-                                    <span class="slider round"></span>
+                            <div className='field'>
+                                <label class="label">
+                                    <span class="label-text">Loacation</span>
+                                </label>
+                                <br />
+                                <select {...register("location")}>
+                                    {
+                                        divisions.map(division =>
+                                            <option
+                                                value={division.name}
+                                            >
+                                                {division.name}
+                                            </option>)
+                                    }
+                                </select>
+                                <label class="label">
+                                    {errors.bill?.type === 'required' && <span class="label-text-alt text-red-500">{errors.bill.message}</span>}
+                                </label>
+                            </div><div className='field'>
+                                <label class="label">
+                                    <span class="label-text">Station</span>
+                                </label>
+                                <br />
+                                <select {...register("station")}>
+                                    {
+                                        divisions.map(division =>
+                                            <option
+                                                value={division.name}
+                                            >
+                                                {division.name}
+                                            </option>)
+                                    }
+                                </select>
+                                <label class="label">
+                                    {errors.bill?.type === 'required' && <span class="label-text-alt text-red-500">{errors.bill.message}</span>}
                                 </label>
                             </div>
-                            <div id='loginFormContainer' className='loginFormContainer displayNone'>
-                                <div className='field'>
-                                    <label class="label">
-                                        <span class="label-text">Employee Status</span>
-                                    </label>
-                                    <br />
-                                    <input
-                                        type="text"
-                                        placeholder='--select--'
-                                        class="input input-border border-black w-full max-w-xs"
-                                        {...register("status")}
-                                    />
-                                </div>
-                                <div className='field'>
-                                    <label class="label">
-                                        <span class="label-text">Status</span>
-                                    </label>
-                                    <br />
-                                    <div className='status'>
-                                        <div className='radio'>
-                                            <input type="radio" id="html" name="fav_language" value="enabled" checked />
-                                            <span> Enabled</span>
-                                        </div>
-                                        <div className='radio'>
-                                            <input type="radio" id="html" name="fav_language" value="disabled" />
-                                            <span>Disabled</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className='field'>
-                                    <label class="label">
-                                        <span class="label-text">SuperVisor Name</span>
-                                    </label>
-                                    <br />
-                                    <input
-                                        type="text"
-                                        placeholder='Type for hints..'
-                                        class="input input-border border-black w-full max-w-xs"
-                                        {...register("supervisor")}
-                                    />
-                                </div>
-                                <div className='field'>
-                                    <label class="label">
-                                        <span class="label-text">Job Title</span>
-                                    </label>
-                                    <br />
-                                    <input
-                                        type="text"
-                                        placeholder='--select--'
-                                        class="input input-border border-black w-full max-w-xs"
-                                        {...register("title")}
-                                    />
-                                </div>
+                            <div className='field'>
+                                <label class="label">
+                                    <span class="label-text">Phone</span>
+                                </label>
+                                <br />
+                                <input
+                                    type="text"
+                                    class="input input-border border-black w-full max-w-xs"
+                                    placeholder='Phone Number'
+                                    {...register("phone", {
+                                        required: {
+                                            value: true,
+                                            message: 'Phone is required..'
+                                        }
+                                    })}
+                                />
+                                <label class="label">
+                                    {errors.phone?.type === 'required' && <span class="label-text-alt text-red-500">{errors.phone.message}</span>}
+                                </label>
                             </div>
                         </div>
+                        <br />
                         <hr />
                         <div className='submitInfo formBox'>
                             <input className='submit submit1' type="submit" value='Cancel' />

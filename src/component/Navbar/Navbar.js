@@ -11,7 +11,7 @@ const Navbar = () => {
     const logout = () => {
         signOut(auth);
     }
-    const [user] =useAuthState(auth);
+    const [user] = useAuthState(auth);
     return (
         <div className='navbar'>
             <div className='sideMenu'>
@@ -21,21 +21,28 @@ const Navbar = () => {
                 <img src={profile} alt="" />
                 <ul>
                     <li>
-                       <span className='proName'>Hey, {user?.displayName}</span>
+                        <span className='proName'>Hey, {user?.displayName}</span>
                         {/* <ArrowDropDownIcon/> */}
                         <ul className='dropdown'>
-                            <li>
-                            <Link to='' className='decoration'>About</Link>
+                            <Link to='' className='decoration'><li>
+                                About
                             </li>
-                            <li>
-                            <Link to='' className='decoration'>Support</Link>
-                            </li>
-                            <li>
-                            <Link to='' className='decoration'>Password Change</Link>
-                            </li>
-                            <li>
-                                <Link onClick={logout} to='' className='decoration'>Logout</Link>
-                            </li>
+                            </Link>
+                            <Link to='' className='decoration'>
+                                <li>
+                                    Support
+                                </li>
+                            </Link>
+                            <Link to='' className='decoration'>
+                                <li>
+                                    Password Change
+                                </li>
+                            </Link>
+                            <Link onClick={logout} to='' className='decoration'>
+                                <li>
+                                    Logout
+                                </li>
+                            </Link>
                         </ul>
                     </li>
                 </ul>

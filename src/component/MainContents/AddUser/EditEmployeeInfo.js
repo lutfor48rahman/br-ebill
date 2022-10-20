@@ -1,13 +1,23 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './User.css';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useForm } from 'react-hook-form';
 import picture from '../../image/profile.jpg';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 const EditEmployeeInfo = ({row}) => {
-    console.log(row);
+    const{ id} = useParams();
+    const [name , setName] = useState([]);
+   
+    useEffect(()=>{
+        fetch(`https://jsonplaceholder.typicode.com/users/${id}`)
+        .then(res=>res.json())
+        .then(data=>setName(data))
+    },[])
+
+    
+    console.log(name.name);
     const departments = [
         { name: 'HR ' },
         { name: 'IOS developer' },
@@ -91,6 +101,7 @@ const EditEmployeeInfo = ({row}) => {
                                     type="text"
                                     class="input input-border border-black w-full max-w-xs"
                                     placeholder='Full name'
+                                    value={name.name}
                                     {...register("name", {
                                         required: {
                                             value: true,

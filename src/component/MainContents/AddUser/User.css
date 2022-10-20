@@ -8,8 +8,12 @@
 
 .formContainers{
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 10px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+}
+
+.formContainers .field input{
+  width: 320px;
 }
 
 .imageField{
@@ -44,6 +48,20 @@
 .inputs{
     display: flex;
 }
+
+.billingStop{
+  margin-top: 3px;
+}
+
+.billingStop,.radio{
+  display: flex;
+  text-align: start;
+}
+
+.billingStop .radio{
+  width: 100px;
+}
+
 .loginFormContainer,.detailContainers {
     display: grid;
     grid-template-columns: repeat(2, 1fr);

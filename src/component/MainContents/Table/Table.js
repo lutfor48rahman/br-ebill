@@ -4,23 +4,24 @@ import { Link } from 'react-router-dom';
 import Modal from '../AddUser/Modal';
 import './Table.css';
 import EditEmployeeInfo from '../AddUser/EditEmployeeInfo';
-import useInfo from '../../../hook/useInfo';
+import Loader from '../../Loader/Loader';
 
 const Table = ({changeInfo}) => {
     const [search, setSearch] = useState('');
     const [countries, setCountries] = useState([]);
     const [filter, setFilter] = useState('');
-    // const [filter, setFilter] = useInfo('');
+    const [loading,setLoading] = useState(false);
     const[show, setShow] = useState(false);
-    // console.log(countries);
     useEffect(() => {
         fetch('https://restcountries.com/v3.1/all')
             .then(res => res.json())
             .then(data => {
                 setCountries(data)
                 setFilter(data)
+                setLoading(true)
             })
     }, [])
+
     const columns = [
         {
             name: 'Country Name',
@@ -56,9 +57,13 @@ const Table = ({changeInfo}) => {
         });
         setFilter(result);
     }, [search])
+
+    if(loading === false){
+        return <Loader></Loader>
+    }
     return (
         <div className='formDiv content'>
-            <div ><Link to='/add-user'><button className='add'>+ Add</button></Link></div>
+            <div ><Link to='/add-user/users'><button className='add'>+ Add</button></Link></div>
             <DataTable
                 title={`
                 Employee List (${filter.length})
