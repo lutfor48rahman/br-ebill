@@ -36,10 +36,7 @@ function App() {
 
       {
         user &&
-        <>
-          <Navbar></Navbar>
           <Sidebar></Sidebar>
-        </>
       }
 
       <Routes>

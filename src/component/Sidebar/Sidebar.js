@@ -3,20 +3,20 @@ import './Sidebar.css';
 import SearchIcon from '@mui/icons-material/Search';
 import AdminPanelSettingsOutlinedIcon from '@mui/icons-material/AdminPanelSettingsOutlined';
 import ManageAccountsOutlinedIcon from '@mui/icons-material/ManageAccountsOutlined';
-import PeopleOutlineIcon from '@mui/icons-material/PeopleOutline';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import TravelExploreIcon from '@mui/icons-material/TravelExplore';
-import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 import SupervisedUserCircleOutlinedIcon from '@mui/icons-material/SupervisedUserCircleOutlined';
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 import FolderSharedOutlinedIcon from '@mui/icons-material/FolderSharedOutlined';
 import EngineeringOutlinedIcon from '@mui/icons-material/EngineeringOutlined';
-import PostAddOutlinedIcon from '@mui/icons-material/PostAddOutlined';
 import { Link } from "react-router-dom";
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
+import Navbar from '../Navbar/Navbar';
 
 const Sidebar = () => {
     const [expand, setExpand] = useState(false);
+    const [child, setChild] = useState('Dashboard');
+    
 
     useEffect(() => {
         const sideMenus = document.querySelectorAll('.select');
@@ -43,9 +43,22 @@ const Sidebar = () => {
                 box.classList.remove('hide');
             }
         }
-    }, [expand])
+    }, [expand]);
+
+
+    useEffect(() => {
+        const values = document.querySelectorAll('.child');
+        for(const child of values){
+            child.addEventListener('click',function(){
+                setChild(child.innerText);
+            })
+        }
+
+    }, [child])
 
     return (
+        <>
+        <Navbar child={child}></Navbar>
         <div id='sidebar' className='sidebar'>
             <ChevronLeftIcon onClick={() => setExpand(!expand)} className='toggleIcon' />
             <div className='top'>
@@ -59,63 +72,58 @@ const Sidebar = () => {
                         <input type="text" placeholder='Search' />
                     </div>
                     <hr />
-                    <Link className='decoration' to='/admin'>
+                    <Link className='decoration child' to='/admin'>
                         <li className='change select'>
                             <HomeOutlinedIcon className='icon'></HomeOutlinedIcon>
-                            <span>Dashboard</span>
+                            <span >Dashboard</span>
                         </li>
                     </Link>
-                    <Link className='decoration' to='/employee'>
+                    <Link className='decoration child' to='/employee'>
                         <li className='select'>
                             <ManageAccountsOutlinedIcon className='icon'></ManageAccountsOutlinedIcon>
-                            <span>Employee</span>
+                            <span >Employee</span>
                         </li>
                     </Link>
-                    {/* <Link className='decoration' to='/leave'>
-                        <li className='select'>
-                            <PeopleOutlineIcon className='icon'></PeopleOutlineIcon>
-                            <span>Leave</span>
-                        </li>
-                    </Link> */}
-                    <Link className='decoration' to='/house-info'>
+                    <Link className='decoration child' to='/house-info'>
                         <li className='select'>
                             <AccessTimeIcon className='icon'></AccessTimeIcon>
-                            <span>Meter Book</span>
+                            <span >Meter Book</span>
                         </li>
                     </Link>
-                    <Link className='decoration' to='/bill'>
+                    <Link className='decoration child' to='/bill'>
                         <li className='select'>
                             <TravelExploreIcon className='icon'></TravelExploreIcon>
-                            <span>Bill</span>
+                            <span >Bill</span>
                         </li>
                     </Link>
-                    <Link className='decoration' to='/division'>
+                    <Link className='decoration child' to='/division'>
                         <li className='select'>
                             <SupervisedUserCircleOutlinedIcon className='icon'></SupervisedUserCircleOutlinedIcon>
-                            <span>Division</span>
+                            <span >Division</span>
                         </li>
                     </Link>
-                    <Link className='decoration' to='/department'>
+                    <Link className='decoration child' to='/department'>
                         <li className='select'>
-                        <AdminPanelSettingsOutlinedIcon className='icon'></AdminPanelSettingsOutlinedIcon>
-                            <span>Department</span>
+                            <AdminPanelSettingsOutlinedIcon className='icon'></AdminPanelSettingsOutlinedIcon>
+                            <span >Department</span>
                         </li>
                     </Link>
-                    <Link className='decoration' to='/report'>
+                    <Link className='decoration child' to='/report'>
                         <li className='select'>
                             <FolderSharedOutlinedIcon className='icon'></FolderSharedOutlinedIcon>
-                            <span>Report</span>
+                            <span >Report</span>
                         </li>
                     </Link>
-                    <Link className='decoration' to='/mainAdministrator'>
+                    <Link className='decoration child' to='/mainAdministrator'>
                         <li className='select'>
                             <EngineeringOutlinedIcon className='icon'></EngineeringOutlinedIcon>
-                            <span>Setting</span>
+                            <span >Setting</span>
                         </li>
                     </Link>
                 </ul>
             </div>
         </div>
+        </>
     );
 };
 

@@ -7,7 +7,7 @@ import { signOut } from 'firebase/auth';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 
-const Navbar = () => {
+const Navbar = ({child}) => {
     const logout = () => {
         signOut(auth);
     }
@@ -15,7 +15,7 @@ const Navbar = () => {
     return (
         <div className='navbar'>
             <div className='sideMenu'>
-                Admin
+                {child}
             </div>
             <div className='profile'>
                 <img src={profile} alt="" />
