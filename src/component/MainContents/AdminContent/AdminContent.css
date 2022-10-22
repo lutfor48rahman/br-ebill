@@ -21,10 +21,9 @@
 }
 .pieProggress{
     padding: 10px;
-    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
     border-radius: 15px;
 }
-.title,.amount,.desc{
+.title,.amount{
     text-align: center;
 }
 .title{
@@ -35,9 +34,7 @@
     font-size: 18px;
     font-weight: 500;
 }
-.desc{
-    font-size: 14px;
-}
+
 .charts{
     display: grid;
     grid-template-columns: 1.4fr 2fr;
@@ -97,6 +94,9 @@
     width: 100%;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
+.formDiv p{
+    font-weight: 500;
+}
 
 .formContainer{
     margin: 10px;
@@ -111,20 +111,22 @@
     padding-left: 10px ;
 }
 .field input,select{
+    margin-top: 5px;
     border: 1px solid rgb(229, 226, 226);
     border-radius: 10px;
     width: 100%;
 }
  select{
-    
     height: 35px;
 }
 
 .field .label{
     /* font-family: Arial, Helvetica, sans-serif; */
+    margin: 10px;
     font-family: 'Poppins';
     font-size: 15px;
 }
+
 .submitInfo{
     margin-top: 15px;
     margin-bottom: 15px;
@@ -136,7 +138,8 @@
 .submit{
     border: 1px solid rgba(0, 104, 71, 1);
     border-radius: 20px;
-    width: 90px;
+    height: 40px;
+    width: 100px;
     padding: 5px;
     cursor: pointer;
 }

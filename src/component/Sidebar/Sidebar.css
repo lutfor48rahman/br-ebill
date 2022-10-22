@@ -110,6 +110,7 @@
     height: 550px;
     width: 80px;
     margin-left: 0;
+    transition: 0.4s;
 }
 .hide .top{
     /* display: none; */

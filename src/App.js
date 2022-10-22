@@ -24,6 +24,7 @@ import Report from "./component/MainContents/Report/Report";
 import Entitys from "./component/MainContents/Administrator/Entitys";
 import Loader from "./component/Loader/Loader";
 import RequireAuth from "./component/RequiredAuth/RequireAuth";
+import ForgetPassword from "./component/ForgetPassword/ForgetPassword";
 
 
 function App() {
@@ -53,11 +54,11 @@ function App() {
           <Route path="/leave" element={<Leave></Leave>}></Route>
           <Route path="/house-info" element={<HouseInfoForm></HouseInfoForm>}></Route>
           <Route path="/employee" element={<Employee></Employee>}></Route>
-          {/* <RequireAuth> */}
           <Route path="/bill" element={<BillingPage></BillingPage>}></Route>
           <Route path="/department" element={<Department></Department>}></Route>
           <Route path="/division" element={<Division></Division>}></Route>
           <Route path="report" element={<Report></Report>}></Route>
+          <Route path='/forget-password' element={<ForgetPassword></ForgetPassword>}></Route>
           <Route path='/add-user' element={<AddUser></AddUser>}>
             <Route path="users" element={<User></User>}></Route>
             <Route path="edit-employee-info/:id" element={<EditEmployeeInfo></EditEmployeeInfo>}></Route>
@@ -67,7 +68,6 @@ function App() {
             <Route path="vacancy" element={<Candidate></Candidate>}></Route>
             <Route path="access-record" element={<Entitys></Entitys>}></Route>
           </Route>
-        {/* </RequireAuth> */}
       </Routes>
       <ToastContainer />
     </div>

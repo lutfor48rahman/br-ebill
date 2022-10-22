@@ -63,7 +63,7 @@ const Table = ({changeInfo}) => {
     }
     return (
         <div className='formDiv content'>
-            <div ><Link to='/add-user/users'><button className='add'>+ Add</button></Link></div>
+            <div className='addText' ><Link to='/add-user/users'><button className='add'>+ Add Employee</button></Link></div>
             <DataTable
                 title={`
                 Employee List (${filter.length})

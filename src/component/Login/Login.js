@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Login.css';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import brand from '../image/ohrm_branding.png';
 import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
 import KeyOutlinedIcon from '@mui/icons-material/KeyOutlined';
+import VisibilityIcon from '@mui/icons-material/Visibility';
 import { Link, Navigate, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
@@ -13,6 +13,7 @@ import Loader from '../Loader/Loader';
 
 const Login = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
+    const [showPassword, setShowPassword] = useState(false);
 
     const [
         signInWithEmailAndPassword,
@@ -42,12 +43,17 @@ const Login = () => {
 
     };
 
+    const passwordShow = () =>{
+        setShowPassword(showPassword ? false : true)
+    };
+
     return (
         <div className='full'>
             <div className='bgImage'>
                 <div>
                     <div className='heading'>
-                        <img src={brand} alt="" />
+                        <p>BR E<span>-Bill</span> Management <br /> <small>Pakshi Division Rajshahi</small></p>
+                        
                     </div>
                     <div className='form'>
                         <h2>Login</h2>
@@ -82,8 +88,9 @@ const Login = () => {
                                     <KeyOutlinedIcon />
                                     <span class="label-text">Password</span>
                                 </label>
+                                <div className='pass-wrap'>
                                 <input
-                                    type="password"
+                                    type={showPassword ? 'text' : 'password'}
                                     placeholder="Your Password"
                                     class="inputText"
                                     {...register("password", {
@@ -97,6 +104,10 @@ const Login = () => {
                                         }
                                     })}
                                 />
+                                <VisibilityIcon className='eye'
+                                onClick={passwordShow}
+                                />
+                                </div>
                                 <label class="label">
                                     {errors.password?.type === 'required' && <span class="label-text-alt text-red-500">{errors.password.message}</span>}
                                     {errors.password?.type === 'minLength' && <span class="label-text-alt">{errors.password.message}</span>}
@@ -107,7 +118,7 @@ const Login = () => {
                             <br />
                             <input className='formSubmit' type="submit" value='Login' />
                         </form>
-                        <Link className='link'><p className='forgot'> Forgot your password?</p></Link>
+                        <Link className='link' to='/forget-password'><p className='forgot'> Forgot your password?</p></Link>
                         {/* <Link to='/signup' className='link'><p className='createNew'> Create a new account?</p></Link> */}
                     </div>
                 </div>
@@ -115,16 +126,7 @@ const Login = () => {
                 <br /><br /><br />
                 <div class="formCopyright">
                     <div class="copyright">
-                        &copy; Copyright <strong>ZeroDevs</strong>. All Rights Reserved
-                        {/* &copy; Copyright <strong>ZeroDevs</strong>. All Rights Reserved
-                    &copy; Copyright <strong>ZeroDevs</strong>. All Rights Reserved
-                    &copy; Copyright <strong>ZeroDevs</strong>. All Rights Reserved
-                    &copy; Copyright <strong>ZeroDevs</strong>. All Rights Reserved
-                    &copy; Copyright <strong>ZeroDevs</strong>. All Rights Reserved */}
-                    </div>
-                    <div class="credits">
-
-                        Designed by <a href="https://zerodevs.com/" target='_blank'>Zerodevs</a>
+                        &copy; Copyright <strong>ZeroDevs</strong>. All Rights Reserved Designed by <a href="https://zerodevs.com/" target='_blank'>Zerodevs</a>
                     </div>
                 </div>
             </div>

@@ -1,4 +1,7 @@
+ 
   .mainLoader{
+    height: 100%;
+    width: 100%;
     display: flex;
     justify-content: center;
   }
@@ -6,6 +9,8 @@
     animation: rotate 1s infinite;  
     height: 50px;
     width: 50px;
+    position: absolute;
+    top: 50%;
    
   }
   

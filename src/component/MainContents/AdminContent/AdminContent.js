@@ -90,7 +90,6 @@ const AdminContent = () => {
                             </div>
                             <p className='title'>Total amount gain today</p> 
                             <p className='amount'>$580</p>
-                            <p className='desc'> When you enter this token number into your electricity meter, your electricity bill payment will be completed</p>
                         </div>
                         <div>
                             

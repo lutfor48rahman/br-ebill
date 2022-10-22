@@ -54,8 +54,8 @@
 }
 
 .billingStop,.radio{
-  display: flex;
-  text-align: start;
+  /* display: flex;
+  text-align: start; */
 }
 
 .billingStop .radio{
@@ -68,12 +68,10 @@
     grid-gap: 10px;
 }
 .displayNone{
-    /* visibility: none; */
     display: none;
 }
 .loginToggle{
     display: flex;
-    /* justify-items: center; */
     align-items: center;
     margin-bottom: 20px;
 }

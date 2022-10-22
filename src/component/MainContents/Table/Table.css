@@ -10,6 +10,10 @@
     outline: none;
 }
 
+.addText{
+    display: flex;
+    justify-content: end;
+}
 .add{
     cursor: pointer;
     font-size: 20px;
@@ -18,7 +22,7 @@
     background-color: rgba(0, 104, 71, 1);
     color: white;
     height: 40px;
-    width: 90px;
+    width: max-content;
     border: none;
     border-radius: 10px
     
