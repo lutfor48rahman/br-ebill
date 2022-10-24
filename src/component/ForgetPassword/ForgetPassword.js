@@ -43,6 +43,7 @@ const ForgetPassword = () => {
                     <br />
                     <input className='forgetButton' type="submit" value='Send' />
                 </form>
+                <p>Currently your cant change your password. Please contact with proper authority</p>
             </div>
         </div >
     );

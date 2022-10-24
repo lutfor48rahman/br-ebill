@@ -110,11 +110,17 @@
     width: 10px;
     padding-left: 10px ;
 }
-.field input,select{
+.field input{
     margin-top: 5px;
     border: 1px solid rgb(229, 226, 226);
     border-radius: 10px;
     width: 100%;
+}
+.field select{
+    margin-top: 5px;
+    border: 1px solid rgb(229, 226, 226);
+    border-radius: 10px;
+    width: 90%;
 }
  select{
     height: 35px;
@@ -125,6 +131,15 @@
     margin: 10px;
     font-family: 'Poppins';
     font-size: 15px;
+}
+
+.field .label .error{
+    height: 20px;
+}
+.field .label .errorText{
+    color:red;
+    display: flex;
+    justify-items: center;
 }
 
 .submitInfo{

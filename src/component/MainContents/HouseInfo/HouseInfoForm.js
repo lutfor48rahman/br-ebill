@@ -1,9 +1,14 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import './HouseInfo.css';
+import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
 
 const HouseInfoForm = () => {
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    const { register, handleSubmit, reset, formState: { errors } } = useForm();
+
+    const valueReset = () =>{
+        reset();
+    }
     return (
         <div className='main'>
             <br />
@@ -22,8 +27,16 @@ const HouseInfoForm = () => {
                                 <input
                                     type="text"
                                     class="input input-border border-black w-full max-w-xs"
-                                    {...register("colony")}
+                                    {...register("colony", {
+                                        required: {
+                                            value: true,
+                                            message: 'Colony is required..'
+                                        }
+                                    })}
                                 />
+                                 <label class="label">
+                                    {errors.colony?.type === 'required' && <span class="errorText"><ErrorOutlineIcon className='error'/>{errors.colony.message}</span>}
+                                </label>
                             </div>
                             <div className='field'>
                                 <label class="label">
@@ -33,8 +46,16 @@ const HouseInfoForm = () => {
                                 <input
                                     type="text"
                                     class="input input-border border-black w-full max-w-xs"
-                                    {...register("houseNo")}
+                                    {...register("houseNo", {
+                                        required: {
+                                            value: true,
+                                            message: 'House no is required..'
+                                        }
+                                    })}
                                 />
+                                 <label class="label">
+                                    {errors.houseNo?.type === 'required' && <span class="errorText"><ErrorOutlineIcon className='error'/>{errors.houseNo.message}</span>}
+                                </label>
                             </div>
                             <div className='field'>
                                 <label class="label">
@@ -44,8 +65,16 @@ const HouseInfoForm = () => {
                                 <input
                                     type="text"
                                     class="input input-border border-black w-full max-w-xs"
-                                    {...register("meterNo")}
+                                    {...register("meterNo", {
+                                        required: {
+                                            value: true,
+                                            message: 'Meter no is required..'
+                                        }
+                                    })}
                                 />
+                                 <label class="label">
+                                    {errors.meterNo?.type === 'required' && <span class="errorText"><ErrorOutlineIcon className='error'/>{errors.meterNo.message}</span>}
+                                </label>
                             </div>
                             <div className='field'>
                                 <label class="label">
@@ -55,8 +84,16 @@ const HouseInfoForm = () => {
                                 <input
                                     type="text"
                                     class="input input-border border-black w-full max-w-xs"
-                                    {...register("id")}
+                                    {...register("id", {
+                                        required: {
+                                            value: true,
+                                            message: 'Id is required..'
+                                        }
+                                    })}
                                 />
+                                 <label class="label">
+                                    {errors.id?.type === 'required' && <span class="errorText"><ErrorOutlineIcon className='error'/>{errors.id.message}</span>}
+                                </label>
                             </div>
                             <div className='field'>
                                 <label class="label">
@@ -66,8 +103,16 @@ const HouseInfoForm = () => {
                                 <input
                                     type="text"
                                     class="input input-border border-black w-full max-w-xs"
-                                    {...register("name")}
+                                    {...register("name", {
+                                        required: {
+                                            value: true,
+                                            message: 'Name is required..'
+                                        }
+                                    })}
                                 />
+                                 <label class="label">
+                                    {errors.name?.type === 'required' && <span class="errorText"><ErrorOutlineIcon className='error'/>{errors.name.message}</span>}
+                                </label>
                             </div>
                             <div className='field'>
                                 <label class="label">
@@ -77,8 +122,16 @@ const HouseInfoForm = () => {
                                 <input
                                     type="text"
                                     class="input input-border border-black w-full max-w-xs"
-                                    {...register("serial")}
+                                    {...register("serial", {
+                                        required: {
+                                            value: true,
+                                            message: 'House serial is required..'
+                                        }
+                                    })}
                                 />
+                                 <label class="label">
+                                    {errors.serial?.type === 'required' && <span class="errorText"><ErrorOutlineIcon className='error'/>{errors.serial.message}</span>}
+                                </label>
                             </div>
                             <div className='field'>
                                 <label class="label">
@@ -88,8 +141,16 @@ const HouseInfoForm = () => {
                                 <input
                                     type="text"
                                     class="input input-border border-black w-full max-w-xs"
-                                    {...register("page")}
+                                    {...register("page", {
+                                        required: {
+                                            value: true,
+                                            message: 'Page no is required..'
+                                        }
+                                    })}
                                 />
+                                 <label class="label">
+                                    {errors.page?.type === 'required' && <span class="errorText"><ErrorOutlineIcon className='error'/>{errors.page.message}</span>}
+                                </label>
                             </div>
                             <div className='field'>
                                 <label class="label">
@@ -99,8 +160,16 @@ const HouseInfoForm = () => {
                                 <input
                                     type="text"
                                     class="input input-border border-black w-full max-w-xs"
-                                    {...register("data\e")}
+                                    {...register("data", {
+                                        required: {
+                                            value: true,
+                                            message: 'Occupation date is required..'
+                                        }
+                                    })}
                                 />
+                                 <label class="label">
+                                    {errors.data?.type === 'required' && <span class="errorText"><ErrorOutlineIcon className='error'/>{errors.data.message}</span>}
+                                </label>
                             </div>
                             <div className='field'>
                                 <label class="label">
@@ -110,8 +179,16 @@ const HouseInfoForm = () => {
                                 <input
                                     type="text"
                                     class="input input-border border-black w-full max-w-xs"
-                                    {...register("book")}
+                                    {...register("book", {
+                                        required: {
+                                            value: true,
+                                            message: 'Book no is required..'
+                                        }
+                                    })}
                                 />
+                                 <label class="label">
+                                    {errors.book?.type === 'required' && <span class="errorText"><ErrorOutlineIcon className='error'/>{errors.book.message}</span>}
+                                </label>
                             </div>
                             <div className='field'>
                                 <label class="label">
@@ -121,8 +198,16 @@ const HouseInfoForm = () => {
                                 <input
                                     type="text"
                                     class="input input-border border-black w-full max-w-xs"
-                                    {...register("designation")}
+                                    {...register("designation", {
+                                        required: {
+                                            value: true,
+                                            message: 'Designation is required..'
+                                        }
+                                    })}
                                 />
+                                 <label class="label">
+                                    {errors.designation?.type === 'required' && <span class="errorText"><ErrorOutlineIcon className='error'/>{errors.designation.message}</span>}
+                                </label>
                             </div>
                             <div className='field'>
                                 <label class="label">
@@ -132,13 +217,21 @@ const HouseInfoForm = () => {
                                 <input
                                     type="text"
                                     class="input input-border border-black w-full max-w-xs"
-                                    {...register("vacation")}
+                                    {...register("vacation", {
+                                        required: {
+                                            value: true,
+                                            message: 'Vacation date is required..'
+                                        }
+                                    })}
                                 />
+                                 <label class="label">
+                                    {errors.vacation?.type === 'required' && <span class="errorText"><ErrorOutlineIcon className='error'/>{errors.vacation.message}</span>}
+                                </label>
                             </div>
                         </div>
                         <hr />
                         <div className='submitInfo'>
-                            <input className='submit submit1' type="submit" value='Reset' />
+                            <input className='submit submit1' onClick={valueReset} type='button' value='Reset' />
                             <input className='submit submit2' type="submit" value='Search' />
                         </div>
                     </div>

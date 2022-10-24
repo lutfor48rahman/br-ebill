@@ -4,6 +4,7 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useForm } from 'react-hook-form';
 import picture from '../../image/profile.jpg';
+import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
 
 const User = () => {
     const departments = [
@@ -48,6 +49,10 @@ const User = () => {
 
     }
 
+    const valueReset = () =>{
+        reset();
+    }
+
     return (
         <div className=''>
             <p>Add Employee</p>
@@ -78,7 +83,7 @@ const User = () => {
                                     })}
                                 />
                                 <label class="label">
-                                    {errors.name?.type === 'required' && <span class="label-text-alt text-red-500">{errors.name.message}</span>}
+                                    {errors.name?.type === 'required' && <span class="errorText"><ErrorOutlineIcon className='error'/>{errors.name.message}</span>}
                                 </label>
                             </div>
                             <div className='field'>
@@ -98,7 +103,7 @@ const User = () => {
                                     })}
                                 />
                                 <label class="label">
-                                    {errors.email?.type === 'required' && <span class="label-text-alt text-red-500">{errors.email.message}</span>}
+                                    {errors.email?.type === 'required' && <span class="errorText"><ErrorOutlineIcon className='error'/>{errors.email.message}</span>}
                                 </label>
                             </div>
                             <div className='field'>
@@ -117,7 +122,7 @@ const User = () => {
                                     }
                                 </select>
                                 <label class="label">
-                                    {errors.division?.type === 'required' && <span class="label-text-alt text-red-500">{errors.division.message}</span>}
+                                    {errors.division?.type === 'required' && <span class="errorText"><ErrorOutlineIcon className='error'/>{errors.division.message}</span>}
                                 </label>
                             </div>
                             <div className='field'>
@@ -135,7 +140,7 @@ const User = () => {
                                     }
                                 </select>
                                 <label class="label">
-                                    {errors.department?.type === 'required' && <span class="label-text-alt text-red-500">{errors.department.message}</span>}
+                                    {errors.department?.type === 'required' && <span class="errorText"><ErrorOutlineIcon className='error'/>{errors.department.message}</span>}
                                 </label>
                             </div>
                             <div className='field'>
@@ -154,7 +159,7 @@ const User = () => {
                                     }
                                 </select>
                                 <label class="label">
-                                    {errors.bill?.type === 'required' && <span class="label-text-alt text-red-500">{errors.bill.message}</span>}
+                                    {errors.bill?.type === 'required' && <span class="errorText"><ErrorOutlineIcon className='error'/>{errors.bill.message}</span>}
                                 </label>
                             </div>
                             <div className='field'>
@@ -173,7 +178,7 @@ const User = () => {
                                     }
                                 </select>
                                 <label class="label">
-                                    {errors.bill?.type === 'required' && <span class="label-text-alt text-red-500">{errors.bill.message}</span>}
+                                    {errors.bill?.type === 'required' && <span class="errorText"><ErrorOutlineIcon className='error'/>{errors.bill.message}</span>}
                                 </label>
                             </div>
                             <div className='field'>
@@ -192,7 +197,7 @@ const User = () => {
                                     })}
                                 />
                                 <label class="label">
-                                    {errors.bill?.type === 'required' && <span class="label-text-alt text-red-500">{errors.bill.message}</span>}
+                                    {errors.bill?.type === 'required' && <span class="errorText"><ErrorOutlineIcon className='error'/>{errors.bill.message}</span>}
                                 </label>
                             </div>
                             <div className='field'>
@@ -215,10 +220,10 @@ const User = () => {
                                     })}
                                 />
                                 <label class="label">
-                                    {errors.nid?.type === 'required' && <span class="label-text-alt text-red-500">{errors.nid.message}</span>}
+                                    {errors.nid?.type === 'required' && <span class="errorText"><ErrorOutlineIcon className='error'/>{errors.nid.message}</span>}
                                 </label>
                                 <label class="label">
-                                    {errors.nid?.type === 'pattern' && <span class="label-text-alt text-red-500">{errors.nid.message}</span>}
+                                    {errors.nid?.type === 'pattern' && <span class="errorText"><ErrorOutlineIcon className='error'/>{errors.nid.message}</span>}
                                 </label>
                             </div>
                             <div className='field'>
@@ -237,7 +242,7 @@ const User = () => {
                                     })}
                                 />
                                 <label class="label">
-                                    {errors.designation?.type === 'required' && <span class="label-text-alt text-red-500">{errors.designation.message}</span>}
+                                    {errors.designation?.type === 'required' && <span class="errorText"><ErrorOutlineIcon className='error'/>{errors.designation.message}</span>}
                                 </label>
                             </div>
                             <div className='field'>
@@ -272,7 +277,7 @@ const User = () => {
                                     })}
                                 />
                                 <label class="label">
-                                    {errors.status?.type === 'required' && <span class="label-text-alt text-red-500">{errors.status.message}</span>}
+                                    {errors.status?.type === 'required' && <span class="errorText"><ErrorOutlineIcon className='error'/>{errors.status.message}</span>}
                                 </label>
                             </div>
                             <div className='field'>
@@ -291,7 +296,7 @@ const User = () => {
                                     }
                                 </select>
                                 <label class="label">
-                                    {errors.bookNo?.type === 'required' && <span class="label-text-alt text-red-500">{errors.bookNo.message}</span>}
+                                    {errors.bookNo?.type === 'required' && <span class="errorText"><ErrorOutlineIcon className='error'/>{errors.bookNo.message}</span>}
                                 </label>
                             </div>
                             <div className='field'>
@@ -310,7 +315,7 @@ const User = () => {
                                     }
                                 </select>
                                 <label class="label">
-                                    {errors.bookname?.type === 'required' && <span class="label-text-alt text-red-500">{errors.bookname.message}</span>}
+                                    {errors.bookname?.type === 'required' && <span class="errorText"><ErrorOutlineIcon className='error'/>{errors.bookname.message}</span>}
                                 </label>
                             </div>
                             <div className='field'>
@@ -329,7 +334,7 @@ const User = () => {
                                     }
                                 </select>
                                 <label class="label">
-                                    {errors.bookPage?.type === 'required' && <span class="label-text-alt text-red-500">{errors.bookPage.message}</span>}
+                                    {errors.bookPage?.type === 'required' && <span class="errorText"><ErrorOutlineIcon className='error'/>{errors.bookPage.message}</span>}
                                 </label>
                             </div>
                             <div className='field'>
@@ -348,7 +353,7 @@ const User = () => {
                                     }
                                 </select>
                                 <label class="label">
-                                    {errors.place?.type === 'required' && <span class="label-text-alt text-red-500">{errors.place.message}</span>}
+                                    {errors.place?.type === 'required' && <span class="errorText"><ErrorOutlineIcon className='error'/>{errors.place.message}</span>}
                                 </label>
                             </div>
                             <div className='field'>
@@ -371,10 +376,10 @@ const User = () => {
                                     })}
                                 />
                                 <label class="label">
-                                    {errors.house?.type === 'required' && <span class="label-text-alt text-red-500">{errors.house.message}</span>}
+                                    {errors.house?.type === 'required' && <span class="errorText"><ErrorOutlineIcon className='error'/>{errors.house.message}</span>}
                                 </label>
                                 <label class="label">
-                                    {errors.house?.type === 'pattern' && <span class="label-text-alt text-red-500">{errors.house.message}</span>}
+                                    {errors.house?.type === 'pattern' && <span class="errorText"><ErrorOutlineIcon className='error'/>{errors.house.message}</span>}
                                 </label>
                             </div>
                             <div className='field'>
@@ -397,10 +402,10 @@ const User = () => {
                                     })}
                                 />
                                 <label class="label">
-                                    {errors.colony?.type === 'required' && <span class="label-text-alt text-red-500">{errors.colony.message}</span>}
+                                    {errors.colony?.type === 'required' && <span class="errorText"><ErrorOutlineIcon className='error'/>{errors.colony.message}</span>}
                                 </label>
                                 <label class="label">
-                                    {errors.salary?.type === 'pattern' && <span class="label-text-alt text-red-500">{errors.salary.message}</span>}
+                                    {errors.salary?.type === 'pattern' && <span class="errorText"><ErrorOutlineIcon className='error'/>{errors.salary.message}</span>}
                                 </label>
                             </div>
                             <div className='field'>
@@ -419,7 +424,7 @@ const User = () => {
                                     })}
                                 />
                                 <label class="label">
-                                    {errors.book?.type === 'required' && <span class="label-text-alt text-red-500">{errors.book.message}</span>}
+                                    {errors.book?.type === 'required' && <span class="errorText"><ErrorOutlineIcon className='error'/>{errors.book.message}</span>}
                                 </label>
                             </div>
                             <div className='field'>
@@ -438,7 +443,7 @@ const User = () => {
                                     }
                                 </select>
                                 <label class="label">
-                                    {errors.bill?.type === 'required' && <span class="label-text-alt text-red-500">{errors.bill.message}</span>}
+                                    {errors.bill?.type === 'required' && <span class="errorText"><ErrorOutlineIcon className='error'/>{errors.bill.message}</span>}
                                 </label>
                             </div><div className='field'>
                                 <label class="label">
@@ -456,7 +461,7 @@ const User = () => {
                                     }
                                 </select>
                                 <label class="label">
-                                    {errors.bill?.type === 'required' && <span class="label-text-alt text-red-500">{errors.bill.message}</span>}
+                                    {errors.bill?.type === 'required' && <span class="errorText"><ErrorOutlineIcon className='error'/>{errors.bill.message}</span>}
                                 </label>
                             </div>
                             <div className='field'>
@@ -476,14 +481,14 @@ const User = () => {
                                     })}
                                 />
                                 <label class="label">
-                                    {errors.phone?.type === 'required' && <span class="label-text-alt text-red-500">{errors.phone.message}</span>}
+                                    {errors.phone?.type === 'required' && <span class="errorText"><ErrorOutlineIcon className='error'/>{errors.phone.message}</span>}
                                 </label>
                             </div>
                         </div>
                         <br />
                         <hr />
                         <div className='submitInfo formBox'>
-                            <input className='submit submit1' type="submit" value='Cancel' />
+                            <input className='submit submit1' onClick={valueReset} type="button" value='Cancel' />
                             <input className='submit submit2' type="submit" value='Save' />
                         </div>
                     </div>

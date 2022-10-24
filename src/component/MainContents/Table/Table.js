@@ -6,7 +6,7 @@ import './Table.css';
 import EditEmployeeInfo from '../AddUser/EditEmployeeInfo';
 import Loader from '../../Loader/Loader';
 
-const Table = ({changeInfo}) => {
+const Table = (props) => {
     const [search, setSearch] = useState('');
     const [countries, setCountries] = useState([]);
     const [filter, setFilter] = useState('');
@@ -20,7 +20,11 @@ const Table = ({changeInfo}) => {
                 setFilter(data)
                 setLoading(true)
             })
-    }, [])
+    }, []);
+
+    useEffect(()=>{
+        setSearch(props.search);
+    },[props.search]);
 
     const columns = [
         {

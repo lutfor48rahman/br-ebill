@@ -29,7 +29,6 @@ const Sidebar = () => {
     }, []);
 
     useEffect(() => {
-        //     const toggle = document.getElementById('middle');
         const tops = document.getElementsByClassName('main');
         if (expand === true) {
             document.getElementById('sidebar').classList.add('hide');
@@ -72,7 +71,7 @@ const Sidebar = () => {
                         <input type="text" placeholder='Search' />
                     </div>
                     <hr />
-                    <Link className='decoration child' to='/admin'>
+                    <Link className='decoration child' to='/dashboard'>
                         <li className='change select'>
                             <HomeOutlinedIcon className='icon'></HomeOutlinedIcon>
                             <span >Dashboard</span>

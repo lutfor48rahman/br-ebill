@@ -50,7 +50,7 @@ function App() {
           <Route path="/" element={<AdminContent></AdminContent>}></Route>
         
           <Route path="/signup" element={<SignUp></SignUp>}></Route>
-          <Route path="/admin" element={<AdminContent></AdminContent>}></Route>
+          <Route path="/dashboard" element={<AdminContent></AdminContent>}></Route>
           <Route path="/leave" element={<Leave></Leave>}></Route>
           <Route path="/house-info" element={<HouseInfoForm></HouseInfoForm>}></Route>
           <Route path="/employee" element={<Employee></Employee>}></Route>

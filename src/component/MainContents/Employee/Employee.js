@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 // import './Employee.css';
 import { useForm } from "react-hook-form";
 import { Link } from 'react-router-dom';
@@ -7,7 +7,9 @@ import Table from '../Table/Table';
 import SubNavbar from './SubNavbar';
 
 const Employee = () => {
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    const { register, handleSubmit, reset, formState: { errors } } = useForm();
+
+    const [search,setSearch] = useState('')
 
     const status = [
         {name:'--select--'},
@@ -21,6 +23,13 @@ const Employee = () => {
         {name:'Web Develovelper'},
         {name:'UI UX Designer'},
     ]
+    const onSubmit =(data)=>{
+        setSearch(data.name)
+    }
+    const valueReset = () =>{
+        reset();
+    }
+    console.log(search);
 
     return (
         <div className='main'>
@@ -30,7 +39,7 @@ const Employee = () => {
                 <div className='formDiv'>
                     <p>Employee Information</p>
                     <hr />
-                    <form onSubmit={handleSubmit()}>
+                    <form onSubmit={handleSubmit(onSubmit)}>
 
                         <div>
                             <div class="formContainer">
@@ -41,8 +50,11 @@ const Employee = () => {
                                     <br />
                                     <input
                                         type="text"
+                                        placeholder='Search please'
                                         class="input input-border border-black w-full max-w-xs"
-                                        {...register("name")}
+                                        {...register("name",{
+                                            onChange: (e) => {setSearch(e.target.value)},
+                                          })}
                                     />
                                 </div>
                                 <div className='field'>
@@ -56,83 +68,17 @@ const Employee = () => {
                                         {...register("id")}
                                     />
                                 </div>
-                                <div className='field'>
-                                    <label class="label">
-                                        <span class="label-text">Employee Status</span>
-                                    </label>
-                                    <br />
-                                    <select {...register("status")}>
-                                        {
-                                            status.map(st=> <option 
-                                            value={st.name}
-                                            >
-                                                {st.name}
-                                            </option>)
-                                        }
-                                    </select>
-                                </div>
-                                <div className='field'>
-                                    <label class="label">
-                                        <span class="label-text">Include</span>
-                                    </label>
-                                    <br />
-                                    <input
-                                        type="text"
-                                        placeholder='Current Employees Only'
-                                        class="input input-border border-black w-full max-w-xs"
-                                        {...register("include")}
-                                    />
-                                </div>
-                                <div className='field'>
-                                    <label class="label">
-                                        <span class="label-text">SuperVisor Name</span>
-                                    </label>
-                                    <br />
-                                    <input
-                                        type="text"
-                                        placeholder='Type for hints..'
-                                        class="input input-border border-black w-full max-w-xs"
-                                        {...register("supervisor")}
-                                    />
-                                </div>
-                                <div className='field'>
-                                    <label class="label">
-                                        <span class="label-text">Job Title</span>
-                                    </label>
-                                    <br />
-                                    <select {...register('title')}>
-                                        {
-                                            titles.map(title=> <option 
-                                            value={title.name}
-                                            >
-                                                {title.name}
-                                            </option>)
-                                        }
-                                    </select>
-                                </div>
-                                <div className='field'>
-                                    <label class="label">
-                                        <span class="label-text">Sub Unit</span>
-                                    </label>
-                                    <br />
-                                    <input
-                                        type="text"
-                                        class="input input-border border-black w-full max-w-xs"
-                                        placeholder='--select--'
-                                        {...register("unit")}
-                                    />
-                                </div>
                             </div>
                             <hr />
                             <div className='submitInfo'>
-                                <input className='submit submit1' type="submit" value='Reset' />
+                                <input className='submit submit1' onClick={valueReset} type="button" value='Reset' />
                                 <input className='submit submit2' type="submit" value='Search' />
                             </div>
                         </div>
                     </form>
                 </div>
                 <br /> <br />
-            <Table></Table>
+            <Table search={search}></Table>
             </div>
             {/* <Modal></Modal> */}
         </div>

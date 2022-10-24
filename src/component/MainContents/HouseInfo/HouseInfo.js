@@ -28,20 +28,6 @@ const HouseInfo = () => {
                             <div><span>Customer ID:</span></div>
                             <div><span>Customer Name:</span></div>
                         </div>
-                        {/* <div>
-                            <div>hi</div>
-                            <div>hi</div>
-                            <div>hi</div>
-                            <div>hi</div>
-                            <div>hi</div>
-                        </div>
-                        <div>
-                            <div>hi</div>
-                            <div>hi</div>
-                            <div>hi</div>
-                            <div>hi</div>
-                            <div>hi</div>
-                        </div> */}
                         <div className='column2'>
                             <div className='col2-section1'>MERINEPARA PXC</div>
                             <div className='col2-section2'>

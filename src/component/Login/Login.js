@@ -33,6 +33,7 @@ const Login = () => {
             var res = await signInWithEmailAndPassword(data.email, data.password);
             if (res) {
                 console.log("Loged in");
+                toast('Login successfully...');
             } else {
                 console.log("not Loged in");
             }
@@ -40,6 +41,7 @@ const Login = () => {
             console.error(err);
             alert(err.message);
         }
+        
 
     };
 
@@ -119,7 +121,6 @@ const Login = () => {
                             <input className='formSubmit' type="submit" value='Login' />
                         </form>
                         <Link className='link' to='/forget-password'><p className='forgot'> Forgot your password?</p></Link>
-                        {/* <Link to='/signup' className='link'><p className='createNew'> Create a new account?</p></Link> */}
                     </div>
                 </div>
                 <img className='logo' src="https://opensource-demo.orangehrmlive.com/web/images/ohrm_logo.png" alt="" />
