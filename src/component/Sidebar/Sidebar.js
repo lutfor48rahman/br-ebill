@@ -89,7 +89,7 @@ const Sidebar = () => {
                             <span >Meter Book</span>
                         </li>
                     </Link>
-                    <Link className='decoration child' to='/bill'>
+                    <Link className='decoration child' to='/pdf-view'>
                         <li className='select'>
                             <TravelExploreIcon className='icon'></TravelExploreIcon>
                             <span >Bill</span>

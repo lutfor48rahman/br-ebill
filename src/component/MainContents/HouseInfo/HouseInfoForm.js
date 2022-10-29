@@ -1,14 +1,88 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import './HouseInfo.css';
 import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
+import { Link } from 'react-router-dom';
+import Loader from '../../Loader/Loader';
 
 const HouseInfoForm = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
+    const [meters, setMeters] = useState([]);
+    const [search, setSearch] = useState('');
+    const [filter, setFilter] = useState([]);
+    const [loading, setLoading] = useState(false);
+    console.log('Filter', filter);
+    console.log('meters', meters);
+    console.log('search', search);
 
-    const valueReset = () =>{
+    const valueReset = () => {
         reset();
     }
+    const meterInfo = [
+        {
+            customerId: 1,
+            name: 'abul',
+            bookNo: 1,
+            houseNo: 23,
+            meterNo: 1,
+            office: 'uttara',
+            billUnite: 'Railbhabon Dhaka'
+        },
+        {
+            customerId: 2,
+            name: 'kabul',
+            bookNo: 2,
+            houseNo: 33,
+            meterNo: 2,
+            office: 'gulshan',
+            billUnite: 'Railbhabon Dhaka'
+        },
+        {
+            customerId: 3,
+            name: 'babul',
+            bookNo: 3,
+            houseNo: 13,
+            meterNo: 3,
+            office: 'bonani',
+            billUnite: 'Railbhabon Dhaka'
+        },
+        {
+            customerId: 4,
+            name: 'jamal',
+            bookNo: 4,
+            houseNo: 53,
+            meterNo: 4,
+            office: 'gulisthan',
+            billUnite: 'Railbhabon Dhaka'
+        },
+        {
+            customerId: 5,
+            name: 'kamal',
+            bookNo: 5,
+            houseNo: 223,
+            meterNo: 5,
+            office: 'malibag',
+            billUnite: 'Railbhabon Dhaka'
+        },
+    ]
+    useEffect(() => {
+        setFilter(meterInfo);
+        setMeters(meterInfo);
+        // setLoading(true);
+
+    }, []);
+
+    useEffect(() => {
+        const result = filter.filter(meter => {
+            return meter.name.toLowerCase().match(search.toLowerCase());
+        });
+        setMeters(result);
+    }, [search])
+
+    // if (loading) {
+    //     return <Loader></Loader>
+    // }
+
     return (
         <div className='main'>
             <br />
@@ -34,8 +108,8 @@ const HouseInfoForm = () => {
                                         }
                                     })}
                                 />
-                                 <label class="label">
-                                    {errors.colony?.type === 'required' && <span class="errorText"><ErrorOutlineIcon className='error'/>{errors.colony.message}</span>}
+                                <label class="label">
+                                    {errors.colony?.type === 'required' && <span class="errorText"><ErrorOutlineIcon className='error' />{errors.colony.message}</span>}
                                 </label>
                             </div>
                             <div className='field'>
@@ -53,8 +127,8 @@ const HouseInfoForm = () => {
                                         }
                                     })}
                                 />
-                                 <label class="label">
-                                    {errors.houseNo?.type === 'required' && <span class="errorText"><ErrorOutlineIcon className='error'/>{errors.houseNo.message}</span>}
+                                <label class="label">
+                                    {errors.houseNo?.type === 'required' && <span class="errorText"><ErrorOutlineIcon className='error' />{errors.houseNo.message}</span>}
                                 </label>
                             </div>
                             <div className='field'>
@@ -72,8 +146,8 @@ const HouseInfoForm = () => {
                                         }
                                     })}
                                 />
-                                 <label class="label">
-                                    {errors.meterNo?.type === 'required' && <span class="errorText"><ErrorOutlineIcon className='error'/>{errors.meterNo.message}</span>}
+                                <label class="label">
+                                    {errors.meterNo?.type === 'required' && <span class="errorText"><ErrorOutlineIcon className='error' />{errors.meterNo.message}</span>}
                                 </label>
                             </div>
                             <div className='field'>
@@ -91,8 +165,8 @@ const HouseInfoForm = () => {
                                         }
                                     })}
                                 />
-                                 <label class="label">
-                                    {errors.id?.type === 'required' && <span class="errorText"><ErrorOutlineIcon className='error'/>{errors.id.message}</span>}
+                                <label class="label">
+                                    {errors.id?.type === 'required' && <span class="errorText"><ErrorOutlineIcon className='error' />{errors.id.message}</span>}
                                 </label>
                             </div>
                             <div className='field'>
@@ -104,14 +178,16 @@ const HouseInfoForm = () => {
                                     type="text"
                                     class="input input-border border-black w-full max-w-xs"
                                     {...register("name", {
+                                        onChange: (e) => { setSearch(e.target.value) },
                                         required: {
                                             value: true,
                                             message: 'Name is required..'
-                                        }
+                                        },
+
                                     })}
                                 />
-                                 <label class="label">
-                                    {errors.name?.type === 'required' && <span class="errorText"><ErrorOutlineIcon className='error'/>{errors.name.message}</span>}
+                                <label class="label">
+                                    {errors.name?.type === 'required' && <span class="errorText"><ErrorOutlineIcon className='error' />{errors.name.message}</span>}
                                 </label>
                             </div>
                             <div className='field'>
@@ -129,8 +205,8 @@ const HouseInfoForm = () => {
                                         }
                                     })}
                                 />
-                                 <label class="label">
-                                    {errors.serial?.type === 'required' && <span class="errorText"><ErrorOutlineIcon className='error'/>{errors.serial.message}</span>}
+                                <label class="label">
+                                    {errors.serial?.type === 'required' && <span class="errorText"><ErrorOutlineIcon className='error' />{errors.serial.message}</span>}
                                 </label>
                             </div>
                             <div className='field'>
@@ -148,8 +224,8 @@ const HouseInfoForm = () => {
                                         }
                                     })}
                                 />
-                                 <label class="label">
-                                    {errors.page?.type === 'required' && <span class="errorText"><ErrorOutlineIcon className='error'/>{errors.page.message}</span>}
+                                <label class="label">
+                                    {errors.page?.type === 'required' && <span class="errorText"><ErrorOutlineIcon className='error' />{errors.page.message}</span>}
                                 </label>
                             </div>
                             <div className='field'>
@@ -167,8 +243,8 @@ const HouseInfoForm = () => {
                                         }
                                     })}
                                 />
-                                 <label class="label">
-                                    {errors.data?.type === 'required' && <span class="errorText"><ErrorOutlineIcon className='error'/>{errors.data.message}</span>}
+                                <label class="label">
+                                    {errors.data?.type === 'required' && <span class="errorText"><ErrorOutlineIcon className='error' />{errors.data.message}</span>}
                                 </label>
                             </div>
                             <div className='field'>
@@ -186,8 +262,8 @@ const HouseInfoForm = () => {
                                         }
                                     })}
                                 />
-                                 <label class="label">
-                                    {errors.book?.type === 'required' && <span class="errorText"><ErrorOutlineIcon className='error'/>{errors.book.message}</span>}
+                                <label class="label">
+                                    {errors.book?.type === 'required' && <span class="errorText"><ErrorOutlineIcon className='error' />{errors.book.message}</span>}
                                 </label>
                             </div>
                             <div className='field'>
@@ -205,8 +281,8 @@ const HouseInfoForm = () => {
                                         }
                                     })}
                                 />
-                                 <label class="label">
-                                    {errors.designation?.type === 'required' && <span class="errorText"><ErrorOutlineIcon className='error'/>{errors.designation.message}</span>}
+                                <label class="label">
+                                    {errors.designation?.type === 'required' && <span class="errorText"><ErrorOutlineIcon className='error' />{errors.designation.message}</span>}
                                 </label>
                             </div>
                             <div className='field'>
@@ -224,8 +300,8 @@ const HouseInfoForm = () => {
                                         }
                                     })}
                                 />
-                                 <label class="label">
-                                    {errors.vacation?.type === 'required' && <span class="errorText"><ErrorOutlineIcon className='error'/>{errors.vacation.message}</span>}
+                                <label class="label">
+                                    {errors.vacation?.type === 'required' && <span class="errorText"><ErrorOutlineIcon className='error' />{errors.vacation.message}</span>}
                                 </label>
                             </div>
                         </div>
@@ -238,6 +314,33 @@ const HouseInfoForm = () => {
                 </form>
                 <hr />
                 <div className='billTable'>
+                    <table>
+                        <tr>
+                            <th>Customer ID</th>
+                            <th>Customer Name</th>
+                            <th>Book No</th>
+                            <th>House serial</th>
+                            <th>Meter No</th>
+                            <th>Office</th>
+                            <th>Bill Unit</th>
+                        </tr>
+                        {
+                            meters.map(meter =>
+                                <tr className='data'>
+                                    <td>{meter.customerId}</td>
+                                    <td>{meter.name}</td>
+                                    <td>{meter.bookNo}</td>
+                                    <td>{meter.houseNo}</td>
+                                    <td>{meter.meterNo}</td>
+                                    <td>{meter.office}</td>
+                                    <td>{meter.billUnite}</td>
+
+                                </tr>
+                            )
+                        }
+                    </table>
+                </div>
+                {/* <div className='billTable'>
                     <table>
                         <tr>
                             <th>House ID</th>
@@ -258,7 +361,7 @@ const HouseInfoForm = () => {
                             <td>5</td>
                         </tr>
                     </table>
-                </div>
+                </div> */}
             </div>
 
         </div>

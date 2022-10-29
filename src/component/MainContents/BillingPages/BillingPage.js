@@ -12,7 +12,7 @@ const BillingPage = () => {
         html2canvas(input)
             .then((canvas) => {
                 const imgData = canvas.toDataURL('pdf');
-                const pdf = new jsPDF();
+                const pdf = new jsPDF('p','mm','a4');
                 pdf.getFontSize(18);
                 pdf.addImage(imgData, 'JPEG',10,10,195,250);
                 // pdf.output('dataurlnewwindow');

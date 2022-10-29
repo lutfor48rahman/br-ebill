@@ -9,6 +9,7 @@ import {
   QueryClient,
   QueryClientProvider,
 } from 'react-query'
+import { PDFViewer } from '@react-pdf/renderer';
 
 // Create a client
 const queryClient = new QueryClient()
@@ -18,7 +19,7 @@ root.render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
-        <App />
+          <App />
       </BrowserRouter>
     </QueryClientProvider>
   </React.StrictMode>

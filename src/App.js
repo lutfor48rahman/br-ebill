@@ -25,6 +25,7 @@ import Entitys from "./component/MainContents/Administrator/Entitys";
 import Loader from "./component/Loader/Loader";
 import RequireAuth from "./component/RequiredAuth/RequireAuth";
 import ForgetPassword from "./component/ForgetPassword/ForgetPassword";
+import MainView from "./component/PdfViewer/MainView";
 
 
 function App() {
@@ -50,6 +51,7 @@ function App() {
           <Route path="/" element={<AdminContent></AdminContent>}></Route>
         
           <Route path="/signup" element={<SignUp></SignUp>}></Route>
+          <Route path="pdf-view" element={<MainView></MainView>}></Route>
           <Route path="/dashboard" element={<AdminContent></AdminContent>}></Route>
           <Route path="/leave" element={<Leave></Leave>}></Route>
           <Route path="/house-info" element={<HouseInfoForm></HouseInfoForm>}></Route>
