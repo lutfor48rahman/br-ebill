@@ -12,10 +12,16 @@
     text-align: center;
 }
 
-.division select{
+.divisionField{
+    height: 30px;
     width: 300px;
+    border: 1px solid rgb(200, 196, 196);
+    border-radius: 10px;
+    outline: none;
+    padding-left: 10px;
+    font-size: 17px;
 }
-.division input{
+.division .divisionAdd{
     margin-left: 30px;
     width: 150px;
     height: 30px;
@@ -25,8 +31,12 @@
     background-color: orange;
     cursor: pointer;
 }
-.division input:hover{
+.division .divisionAdd:hover{
     background-color: rgb(249, 188, 76);
     transition: .4s;
+}
+
+.showDivision{
+    text-align: center;
 }
 

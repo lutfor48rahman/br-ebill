@@ -9,6 +9,7 @@ import SupervisedUserCircleOutlinedIcon from '@mui/icons-material/SupervisedUser
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 import FolderSharedOutlinedIcon from '@mui/icons-material/FolderSharedOutlined';
 import EngineeringOutlinedIcon from '@mui/icons-material/EngineeringOutlined';
+import FilterNoneIcon from '@mui/icons-material/FilterNone';
 import { Link } from "react-router-dom";
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import Navbar from '../Navbar/Navbar';
@@ -111,6 +112,12 @@ const Sidebar = () => {
                         <li className='select'>
                             <FolderSharedOutlinedIcon className='icon'></FolderSharedOutlinedIcon>
                             <span >Report</span>
+                        </li>
+                    </Link>
+                    <Link className='decoration child' to='temporary-form'>
+                        <li className='select'>
+                            <FilterNoneIcon className='icon'></FilterNoneIcon>
+                            <span >Non-Railway</span>
                         </li>
                     </Link>
                     <Link className='decoration child' to='/mainAdministrator'>

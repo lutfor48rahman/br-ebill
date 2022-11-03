@@ -26,6 +26,7 @@ import Loader from "./component/Loader/Loader";
 import RequireAuth from "./component/RequiredAuth/RequireAuth";
 import ForgetPassword from "./component/ForgetPassword/ForgetPassword";
 import MainView from "./component/PdfViewer/MainView";
+import Temporary from "./component/TemporaryForm.js/Temporary";
 
 
 function App() {
@@ -60,6 +61,7 @@ function App() {
           <Route path="/department" element={<Department></Department>}></Route>
           <Route path="/division" element={<Division></Division>}></Route>
           <Route path="report" element={<Report></Report>}></Route>
+          <Route path='temporary-form' element={<Temporary></Temporary>}></Route>
           <Route path='/forget-password' element={<ForgetPassword></ForgetPassword>}></Route>
           <Route path='/add-user' element={<AddUser></AddUser>}>
             <Route path="users" element={<User></User>}></Route>

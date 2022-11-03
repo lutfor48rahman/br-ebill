@@ -25,11 +25,6 @@ const Department = () => {
                 <div className="department">
                     <form onSubmit={handleSubmit(onsubmit)}>
                        <div className='content'>
-                       <label class="label">
-                            <span class="label-text">Employee Name</span>
-                        </label>
-                        <br />
-                        <br />
                         <input
                             type="text"
                             class="departname"
@@ -41,12 +36,6 @@ const Department = () => {
                                 }
                             })}
                         />
-                        <br />
-                        <label class="label">
-                            {errors.name?.type === 'required' && <span class="label-text-alt text-red-500">{errors.name.message}</span>}
-                        </label>
-                        <br />
-                        <br />
                         <input className='departAdd' type="submit" value='Add' />
                        </div>
                     </form>

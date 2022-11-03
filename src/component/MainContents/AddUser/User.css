@@ -2,6 +2,22 @@
     display: grid;
     grid-template-columns: 1fr 3fr;
 }
+.employeeBack{
+  display: flex;
+  justify-content: space-between;
+}
+
+.employeeBack button{
+  height: 40px;
+  width: 100px;
+  border: none;
+  border-radius: 10px;
+  background-color: orange;
+  margin-top: 5px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
 .formBox{
   margin-left: 15px;
 }

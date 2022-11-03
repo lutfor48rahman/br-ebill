@@ -27,7 +27,7 @@ const TablePdf = ({ data }) => {
       fontSize: 11,
     },
     header: {
-      width:'100%',
+      width:'90%',
       fontSize: 10,
       textAlign: 'center',
       padding: 10,
@@ -35,6 +35,8 @@ const TablePdf = ({ data }) => {
       justifyContent:'center',
       justifyItems:'center',
       backgroundColor:'rgb(242, 237, 237)',
+      marginLeft:30,
+      marginTop:50,
     },
     logo: {
       height: 50,
@@ -51,6 +53,9 @@ const TablePdf = ({ data }) => {
     description:{
       fontFamily: 'Ubuntu',
       padding:5,
+    },
+    footer:{
+      position:'fixed',
     }
 
   });
@@ -67,7 +72,7 @@ const TablePdf = ({ data }) => {
             <Text>In case of any concerns or grievance against tickets purchased through the e-ticket website or Rail Sheba app, a. passenger should notify Bangladesh Railway within 2 hours by sending an email along with the e-ticket details to support@eticket.railway.gov.bd.</Text>
           </View>
         </View>
-        <View> <ItemsTable data={data} /></View>
+        <View style={styles.fullpage}> <ItemsTable data={data} /></View>
         {/* others text */}
       </Page>
     </Document>

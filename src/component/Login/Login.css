@@ -119,6 +119,13 @@
     border: none;
     padding: 0;
 }
+
+.loginError{
+    color: red;
+    font-size: 12px;
+    margin: 5px;
+    padding: 5px;
+}
 .forgot{
     text-align: center;
     color: orange;

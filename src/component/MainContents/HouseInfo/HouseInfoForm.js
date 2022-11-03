@@ -95,21 +95,21 @@ const HouseInfoForm = () => {
                         <div class="formContainer">
                             <div className='field'>
                                 <label class="label">
-                                    <span class="label-text"> Colony</span>
+                                    <span class="label-text"> House ID</span>
                                 </label>
                                 <br />
                                 <input
                                     type="text"
                                     class="input input-border border-black w-full max-w-xs"
-                                    {...register("colony", {
+                                    {...register("houseID", {
                                         required: {
                                             value: true,
-                                            message: 'Colony is required..'
+                                            message: 'House id is required..'
                                         }
                                     })}
                                 />
                                 <label class="label">
-                                    {errors.colony?.type === 'required' && <span class="errorText"><ErrorOutlineIcon className='error' />{errors.colony.message}</span>}
+                                    {errors.houseID?.type === 'required' && <span class="errorText"><ErrorOutlineIcon className='error' />{errors.houseID.message}</span>}
                                 </label>
                             </div>
                             <div className='field'>

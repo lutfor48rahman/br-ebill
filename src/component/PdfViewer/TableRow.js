@@ -8,7 +8,7 @@ const TableRow = ({ data }) => {
         <View>
 
             <ReportTable data={data}></ReportTable>
-
+           
         </View>
     )
 };

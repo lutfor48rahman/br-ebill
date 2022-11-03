@@ -1,8 +1,10 @@
 import React, { Fragment, useEffect, useState } from 'react';
 import { PDFViewer } from "@react-pdf/renderer";
 import Table from './TablePdf';
+import Loader from '../Loader/Loader';
 const MainView = () => {
     const [data, setData] = useState([]);
+    const [loading, setLoading] = useState(false);
     // const data = {
     //     id: "5df3180a09ea16dc4b95f910",
     //     items: [
@@ -4459,15 +4461,19 @@ const MainView = () => {
             .then(res => res.json())
             .then(data => {
                 setData(data);
+                setLoading(true);
             })
     }, []);
 
+    if(loading === false){
+        return <Loader></Loader>
+    }
 
     return (
         <div className="main">
             <div className="formDiv">
                 <Fragment>
-                    <PDFViewer width="950" height="600">
+                    <PDFViewer width="100%" height="600">
                         <Table data={data} />
                     </PDFViewer>
                 </Fragment>

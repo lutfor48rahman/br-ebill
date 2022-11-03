@@ -14,6 +14,7 @@ import Loader from '../Loader/Loader';
 const Login = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
     const [showPassword, setShowPassword] = useState(false);
+    const [customError,setCustomError] = useState('');
 
     const [
         signInWithEmailAndPassword,
@@ -116,7 +117,9 @@ const Login = () => {
                                 </label>
 
                             </div>
-                            {error?.message}
+
+                            <p className='loginError'> {error?.message}</p>
+
                             <br />
                             <input className='formSubmit' type="submit" value='Login' />
                         </form>
